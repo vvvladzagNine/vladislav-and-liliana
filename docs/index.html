@@ -23,9 +23,9 @@
                     <div class="progress-ring"></div>
                 </div>
                 <div class="profile-info">
-                    <h1>Антон Алексеев</h1>
-                    <p class="position">Инженер-механик</p>
-                    <span class="status">В активном поиске работы</span>
+                    <h1>Владислав Загидуллин</h1>
+                    <p class="position">Бездельник профессиональный</p>
+                    <span class="status">В активном поиске пива</span>
                 </div>
             </div>
         </header>
@@ -33,11 +33,11 @@
         <div class="contact-info">
             <div class="contact-item">
                 <span class="icon">📞</span>
-                <span>+7 (990) 908-87-33</span>
+                <span>+7 (000) 000-00-00</span>
             </div>
             <div class="contact-item">
                 <span class="icon">📧</span>
-                <span>emmaphillips98@gmail.com</span>
+                <span>e0000@gmail.com</span>
             </div>
         </div>
 
@@ -57,13 +57,20 @@
                 <div class="stat-value">10</div>
                 <div class="stat-update">+2 новых за сегодня</div>
             </div>
-            <div class="stat-card">
+            <div class="stat-card rejection-card">
                 <div class="stat-header">
                     <span class="icon">✕</span>
                     <span>Отказов</span>
                 </div>
                 <div class="stat-value">1</div>
                 <div class="stat-update">+1 новых за сегодня</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span class="icon">📝</span>
+                    <span>Заполненный опыт</span>
+                </div>
+                <div class="stat-value">0/4</div>
             </div>
         </div>
 
@@ -106,19 +113,19 @@
         </div>
 
         <nav class="bottom-nav">
-            <button class="nav-btn">
+            <button class="nav-btn" onclick="location.href='vacancies.html'">
                 <span class="icon">🔍</span>
                 <span>Вакансии</span>
             </button>
-            <button class="nav-btn">
+            <button class="nav-btn" onclick="location.href='favorites.html'">
                 <span class="icon">⭐️</span>
                 <span>Избранные</span>
             </button>
-            <button class="nav-btn">
+            <button class="nav-btn" onclick="location.href='index.html#responses'">
                 <span class="icon">✉️</span>
                 <span>Отклики</span>
             </button>
-            <button class="nav-btn">
+            <button class="nav-btn" id="messagesBtn">
                 <span class="icon">💬</span>
                 <span>Сообщения</span>
             </button>
@@ -135,7 +142,7 @@
             <span class="close">&times;</span>
             <h2>Отправить сообщение</h2>
             <input type="text" id="name" placeholder="Ваше имя">
-            <input type="tel" id="phone" placeholder="Номер телефона">
+            <textarea id="message" placeholder="Ваше сообщение"></textarea>
             <button id="sendBtn">Отправить</button>
         </div>
     </div>

@@ -66,6 +66,7 @@ body {
     border: 3px solid var(--accent-color);
     border-radius: 50%;
     border-right-color: transparent;
+    animation: spin 30s linear infinite;
 }
 
 .profile-info h1 {
@@ -81,8 +82,36 @@ body {
 }
 
 .status {
-    color: var(--success-color);
-    font-size: 14px;
+    position: relative;
+    padding-left: 12px;
+}
+
+.status::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background: var(--success-color);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: translateY(-50%) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-50%) scale(1.5);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(-50%) scale(1);
+        opacity: 1;
+    }
 }
 
 .contact-info {
@@ -109,6 +138,8 @@ body {
     background: #F5F5F8;
     padding: 12px;
     border-radius: 12px;
+    opacity: 0;
+    animation: fadeInUp 0.5s ease forwards;
 }
 
 .stat-header {
@@ -141,6 +172,23 @@ body {
     align-items: center;
     padding: 16px;
     border-bottom: 1px solid #EEEEF0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-item:hover {
+    background: #F5F5F8;
+}
+
+.section-item:active {
+    transform: scale(0.98);
+}
+
+.section-item:hover .arrow {
+    transform: translateX(4px);
+    color: var(--accent-color);
 }
 
 .section-content {
@@ -213,33 +261,203 @@ button {
     background: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
+    z-index: 1000;
 }
 
 .modal-content {
     background: white;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    width: 300px;
+    padding: 24px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
 }
 
-.modal-content input {
+.modal-content h2 {
+    color: var(--primary-color);
+    margin-bottom: 16px;
+}
+
+.modal-content input,
+.modal-content textarea {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #EEEEF0;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.modal-content textarea {
+    height: 120px;
+    resize: none;
 }
 
 #sendBtn {
-    background: #007BFF;
+    width: 100%;
+    padding: 12px;
+    background: var(--accent-color);
     color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-weight: 600;
 }
 
 .close {
     float: right;
+    font-size: 24px;
     cursor: pointer;
+    color: var(--secondary-color);
+}
+
+/* Анимация тряски */
+@keyframes shake {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    15%, 45%, 75% {
+        transform: translate(-2px, 0);
+    }
+    30%, 60%, 90% {
+        transform: translate(2px, 0);
+    }
+}
+
+/* Анимация изменения цвета */
+@keyframes toRed {
+    0% {
+        background: #F5F5F8;
+    }
+    100% {
+        background: rgba(255, 84, 84, 0.15);
+    }
+}
+
+/* Добавляем стили для плитки отказов */
+.stat-card:has(.stat-header:has(.icon:contains("✕"))) {
+    cursor: pointer;
+}
+
+.stat-card:has(.stat-header:has(.icon:contains("✕"))):hover {
+    animation: shake 0.5s infinite, toRed 0.3s forwards;
+}
+
+.stat-card:has(.stat-header:has(.icon:contains("✕"))):hover .stat-header,
+.stat-card:has(.stat-header:has(.icon:contains("✕"))):hover .stat-value,
+.stat-card:has(.stat-header:has(.icon:contains("✕"))):hover .stat-update {
+    color: var(--error-color);
+}
+
+/* Стили для плитки отказов с использованием класса */
+.rejection-card {
+    cursor: pointer;
+}
+
+.rejection-card:hover {
+    animation: shake 0.15s linear infinite;
+}
+
+.rejection-card:hover {
+    background: #F5F5F8;
+    animation: shake 0.15s linear infinite;
+    transition: background 1.5s ease;
+    background: rgba(255, 84, 84, 0.15);
+}
+
+.rejection-card:hover .stat-header,
+.rejection-card:hover .stat-value,
+.rejection-card:hover .stat-update {
+    color: var(--error-color);
+    transition: color 1.5s ease;
+}
+
+/* Добавим анимацию появления */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Добавим задержку для каждой следующей плитки */
+.stat-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.stat-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.stat-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.stat-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+/* Анимация для кнопок в шапке */
+.settings-btn, .share-btn, .edit-btn {
+    transition: transform 0.2s ease;
+}
+
+.settings-btn:hover {
+    animation: rotate 1s linear infinite;
+}
+
+.share-btn:hover {
+    transform: translateY(-3px);
+}
+
+.edit-btn:hover {
+    animation: wiggle 0.5s ease;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-10deg); }
+    75% { transform: rotate(10deg); }
+}
+
+.arrow {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Стили для эффекта ряби */
+.ripple {
+    position: absolute;
+    background: rgba(107, 78, 255, 0.1);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0);
+    animation: ripple 1s linear;
+}
+
+@keyframes ripple {
+    to {
+        transform: translate(-50%, -50%) scale(4);
+        opacity: 0;
+    }
 }

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Избранные вакансии</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/vacancies.css">
+</head>
+<body>
+    <div class="profile">
+        <header class="page-header">
+            <button class="back-btn" onclick="history.back()">←</button>
+            <h1>Избранные вакансии</h1>
+        </header>
+
+        <div class="vacancies-list">
+            <div class="vacancy-card">
+                <div class="vacancy-header">
+                    <h2>Главный механик</h2>
+                    <span class="salary">180 000 – 250 000 ₽</span>
+                </div>
+                <p class="company">ПАО "ПромТех"</p>
+                <p class="location">Санкт-Петербург</p>
+                <div class="tags">
+                    <span class="tag">Полный день</span>
+                    <span class="tag">Опыт от 7 лет</span>
+                </div>
+                <button class="remove-favorite">Удалить из избранного</button>
+            </div>
+        </div>
+
+        <nav class="bottom-nav">
+            <button class="nav-btn" onclick="location.href='vacancies.html'">
+                <span class="icon">🔍</span>
+                <span>Вакансии</span>
+            </button>
+            <button class="nav-btn active">
+                <span class="icon">⭐️</span>
+                <span>Избранные</span>
+            </button>
+            <button class="nav-btn" onclick="location.href='index.html#responses'">
+                <span class="icon">✉️</span>
+                <span>Отклики</span>
+            </button>
+            <button class="nav-btn" id="messagesBtn">
+                <span class="icon">💬</span>
+                <span>Сообщения</span>
+            </button>
+            <button class="nav-btn" onclick="location.href='index.html'">
+                <span class="icon">👤</span>
+                <span>Профиль</span>
+            </button>
+        </nav>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html> 

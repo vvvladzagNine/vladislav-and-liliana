@@ -1,0 +1,79 @@
+.page-header {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    border-bottom: 1px solid #EEEEF0;
+}
+
+.back-btn {
+    font-size: 24px;
+    margin-right: 16px;
+    color: var(--primary-color);
+}
+
+.page-header h1 {
+    font-size: 20px;
+    color: var(--primary-color);
+}
+
+.vacancies-list {
+    padding: 16px;
+}
+
+.vacancy-card {
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.vacancy-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+
+.vacancy-header h2 {
+    font-size: 18px;
+    color: var(--primary-color);
+}
+
+.salary {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.company {
+    color: var(--secondary-color);
+    margin-bottom: 4px;
+}
+
+.location {
+    color: var(--secondary-color);
+    margin-bottom: 12px;
+}
+
+.tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background: #F5F5F8;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    color: var(--secondary-color);
+}
+
+.remove-favorite {
+    margin-top: 12px;
+    color: var(--error-color);
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--error-color);
+    border-radius: 6px;
+} 

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вакансии</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/vacancies.css">
+</head>
+<body>
+    <div class="profile">
+        <header class="page-header">
+            <button class="back-btn" onclick="history.back()">←</button>
+            <h1>Вакансии</h1>
+        </header>
+
+        <div class="vacancies-list">
+            <div class="vacancy-card">
+                <div class="vacancy-header">
+                    <h2>Инженер-механик</h2>
+                    <span class="salary">от 120 000 ₽</span>
+                </div>
+                <p class="company">ООО "ТехноПром"</p>
+                <p class="location">Санкт-Петербург</p>
+                <div class="tags">
+                    <span class="tag">Полный день</span>
+                    <span class="tag">Опыт от 3 лет</span>
+                </div>
+            </div>
+
+            <div class="vacancy-card">
+                <div class="vacancy-header">
+                    <h2>Ведущий инженер-конструктор</h2>
+                    <span class="salary">150 000 – 200 000 ₽</span>
+                </div>
+                <p class="company">АО "Машиностроительный завод"</p>
+                <p class="location">Ленинградская область</p>
+                <div class="tags">
+                    <span class="tag">Полный день</span>
+                    <span class="tag">Опыт от 5 лет</span>
+                </div>
+            </div>
+
+            <div class="vacancy-card">
+                <div class="vacancy-header">
+                    <h2>Инженер-механик по ремонту</h2>
+                    <span class="salary">от 90 000 ₽</span>
+                </div>
+                <p class="company">ЗАО "РемТехСервис"</p>
+                <p class="location">Санкт-Петербург</p>
+                <div class="tags">
+                    <span class="tag">Сменный график</span>
+                    <span class="tag">Опыт от 1 года</span>
+                </div>
+            </div>
+        </div>
+
+        <nav class="bottom-nav">
+            <button class="nav-btn active">
+                <span class="icon">🔍</span>
+                <span>Вакансии</span>
+            </button>
+            <button class="nav-btn" onclick="location.href='favorites.html'">
+                <span class="icon">⭐️</span>
+                <span>Избранные</span>
+            </button>
+            <button class="nav-btn" onclick="location.href='index.html#responses'">
+                <span class="icon">✉️</span>
+                <span>Отклики</span>
+            </button>
+            <button class="nav-btn" id="messagesBtn">
+                <span class="icon">💬</span>
+                <span>Сообщения</span>
+            </button>
+            <button class="nav-btn" onclick="location.href='index.html'">
+                <span class="icon">👤</span>
+                <span>Профиль</span>
+            </button>
+        </nav>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html> 
