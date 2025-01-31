@@ -7,48 +7,125 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
     <div class="profile">
         <header class="profile-header">
-            <img src="images/avatar.jpg" alt="Аватар" class="avatar">
-            <div class="profile-info">
-                <h2>Владислав Загидуллин</h2>
-                <p class="position">Бездельник профессиональный</p>
-                <span class="status">В активном поиске пива</span>
+            <div class="top-bar">
+                <button class="settings-btn">⚙️</button>
+                <div class="right-buttons">
+                    <button class="share-btn">↗️</button>
+                    <button class="edit-btn">✏️</button>
+                </div>
+            </div>
+            
+            <div class="user-info">
+                <div class="avatar-container">
+                    <img src="images/avatar.jpg" alt="Аватар" class="avatar">
+                    <div class="progress-ring"></div>
+                </div>
+                <div class="profile-info">
+                    <h1>Антон Алексеев</h1>
+                    <p class="position">Инженер-механик</p>
+                    <span class="status">В активном поиске работы</span>
+                </div>
             </div>
         </header>
 
         <div class="contact-info">
-            <p>📞 +7 (000) 900-00-00</p>
-            <p>📧 e0000@gmail.com</p>
+            <div class="contact-item">
+                <span class="icon">📞</span>
+                <span>+7 (990) 908-87-33</span>
+            </div>
+            <div class="contact-item">
+                <span class="icon">📧</span>
+                <span>emmaphillips98@gmail.com</span>
+            </div>
         </div>
 
         <div class="stats">
-            <div class="stat">Откликов <span>34</span></div>
-            <div class="stat invited">Приглашений <span>0</span></div>
-            <div class="stat rejected">Отказов <span>22</span></div>
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span class="icon">✉️</span>
+                    <span>Откликов</span>
+                </div>
+                <div class="stat-value">12</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span class="icon">✓</span>
+                    <span>Приглашений</span>
+                </div>
+                <div class="stat-value">10</div>
+                <div class="stat-update">+2 новых за сегодня</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-header">
+                    <span class="icon">✕</span>
+                    <span>Отказов</span>
+                </div>
+                <div class="stat-value">1</div>
+                <div class="stat-update">+1 новых за сегодня</div>
+            </div>
         </div>
 
         <div class="sections">
-            <div class="section">
-                <h3>Личные данные</h3>
-                <p>3/4</p>
+            <div class="section-item">
+                <div class="section-content">
+                    <span class="icon">👤</span>
+                    <div class="section-info">
+                        <h3>Личные данные</h3>
+                        <p>Антон Алексеев, 24 года, Ленинградская обл.</p>
+                    </div>
+                </div>
+                <div class="section-progress">3/4</div>
+                <span class="arrow">→</span>
             </div>
-            <div class="section">
-                <h3>Специальность</h3>
-                <p>1/1</p>
+            
+            <div class="section-item">
+                <div class="section-content">
+                    <span class="icon">💼</span>
+                    <div class="section-info">
+                        <h3>Специальность</h3>
+                        <p>Инженер-механик</p>
+                    </div>
+                </div>
+                <div class="section-progress">1/4</div>
+                <span class="arrow">→</span>
             </div>
-            <div class="section">
-                <h3>Профессиональный опыт</h3>
-                <p>0/4</p>
+            
+            <div class="section-item">
+                <div class="section-content">
+                    <span class="icon">📋</span>
+                    <div class="section-info">
+                        <h3>Профессиональный опыт</h3>
+                        <p>Нет данных</p>
+                    </div>
+                </div>
+                <div class="section-progress">0/4</div>
+                <span class="arrow">→</span>
             </div>
         </div>
 
         <nav class="bottom-nav">
-            <button>🏠 Главная</button>
-            <button>⭐️ Избранное</button>
-            <button class="messages-btn">💬 Сообщения</button>
-            <button>👤 Профиль</button>
+            <button class="nav-btn">
+                <span class="icon">🔍</span>
+                <span>Вакансии</span>
+            </button>
+            <button class="nav-btn">
+                <span class="icon">⭐️</span>
+                <span>Избранные</span>
+            </button>
+            <button class="nav-btn">
+                <span class="icon">✉️</span>
+                <span>Отклики</span>
+            </button>
+            <button class="nav-btn">
+                <span class="icon">💬</span>
+                <span>Сообщения</span>
+            </button>
+            <button class="nav-btn active">
+                <span class="icon">👤</span>
+                <span>Профиль</span>
+            </button>
         </nav>
     </div>
 

@@ -1,107 +1,205 @@
-body {
-    font-family: Arial, sans-serif;
-    background: #F0F4F8;
+:root {
+    --primary-color: #2B2D3C;
+    --secondary-color: #8083A3;
+    --accent-color: #6B4EFF;
+    --success-color: #1EC97C;
+    --error-color: #FF5454;
+    --background-color: #F8F8F8;
+    --card-background: #FFFFFF;
+}
+
+* {
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
 }
 
 .profile {
-    width: 360px;
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 430px;
+    margin: 0 auto;
+    background: var(--card-background);
+    min-height: 100vh;
 }
 
-.profile-header {
-    background: #2E3A59;
-    color: white;
+.top-bar {
     display: flex;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+.right-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.user-info {
+    padding: 0 16px;
+    display: flex;
+    gap: 16px;
     align-items: center;
-    padding: 20px;
+}
+
+.avatar-container {
+    position: relative;
+    width: 80px;
+    height: 80px;
 }
 
 .avatar {
-    width: 60px;
-    height: 60px;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
-    margin-right: 15px;
+    object-fit: cover;
 }
 
-.profile-info h2 {
-    margin: 0;
+.progress-ring {
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border: 3px solid var(--accent-color);
+    border-radius: 50%;
+    border-right-color: transparent;
+}
+
+.profile-info h1 {
+    font-size: 20px;
+    color: var(--primary-color);
+    margin-bottom: 4px;
+}
+
+.position {
+    color: var(--secondary-color);
+    font-size: 14px;
+    margin-bottom: 4px;
 }
 
 .status {
-    font-size: 12px;
-    background: #32CD32;
-    padding: 3px 8px;
-    border-radius: 5px;
-}
-
-.contact-info {
-    padding: 15px;
+    color: var(--success-color);
     font-size: 14px;
 }
 
-.stats {
+.contact-info {
+    margin-top: 24px;
+    padding: 0 16px;
+}
+
+.contact-item {
     display: flex;
-    justify-content: space-around;
-    padding: 15px;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    color: var(--primary-color);
 }
 
-.stat {
-    background: #EFEFEF;
-    padding: 10px;
-    border-radius: 10px;
-    text-align: center;
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    padding: 16px;
 }
 
-.invited {
-    background: #D4EDDA;
-    color: #155724;
+.stat-card {
+    background: #F5F5F8;
+    padding: 12px;
+    border-radius: 12px;
 }
 
-.rejected {
-    background: #F8D7DA;
-    color: #721C24;
+.stat-header {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--secondary-color);
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.stat-update {
+    font-size: 12px;
+    color: var(--success-color);
+    margin-top: 4px;
 }
 
 .sections {
-    padding: 15px;
+    padding: 16px;
 }
 
-.section {
+.section-item {
     display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    background: #F8F9FA;
-    margin-bottom: 5px;
-    border-radius: 5px;
+    align-items: center;
+    padding: 16px;
+    border-bottom: 1px solid #EEEEF0;
+}
+
+.section-content {
+    flex: 1;
+    display: flex;
+    gap: 12px;
+}
+
+.section-info h3 {
+    color: var(--primary-color);
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.section-info p {
+    color: var(--secondary-color);
+    font-size: 14px;
+}
+
+.section-progress {
+    color: var(--secondary-color);
+    font-size: 14px;
+    margin-right: 8px;
 }
 
 .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--card-background);
     display: flex;
     justify-content: space-around;
-    background: #2E3A59;
-    padding: 10px;
+    padding: 8px 0;
+    border-top: 1px solid #EEEEF0;
+    max-width: 430px;
+    margin: 0 auto;
 }
 
-.bottom-nav button {
+.nav-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
     background: none;
     border: none;
-    color: white;
-    font-size: 16px;
+    color: var(--secondary-color);
+    font-size: 12px;
+    cursor: pointer;
 }
 
-.messages-btn {
-    background: #007BFF;
-    padding: 5px 10px;
-    border-radius: 5px;
+.nav-btn.active {
+    color: var(--accent-color);
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 /* Модальное окно */
