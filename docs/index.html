@@ -3,149 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Профиль</title>
+    <title>Свадьба</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="profile">
-        <header class="profile-header">
-            <div class="top-bar">
-                <button class="settings-btn">⚙️</button>
-                <div class="right-buttons">
-                    <button class="share-btn">↗️</button>
-                    <button class="edit-btn">✏️</button>
-                </div>
+    <header>
+        <nav class="fixed-header">
+            <div class="header-content">
+                <span>Владислав & Лилиана</span>
             </div>
-            
-            <div class="user-info">
-                <div class="avatar-container">
-                    <img src="images/avatar.jpg" alt="Аватар" class="avatar">
-                    <div class="progress-ring"></div>
-                </div>
-                <div class="profile-info">
-                    <h1>Владислав Загидуллин</h1>
-                    <p class="position">Бездельник профессиональный</p>
-                    <span class="status">В активном поиске пива</span>
-                </div>
-            </div>
-        </header>
-
-        <div class="contact-info">
-            <div class="contact-item">
-                <span class="icon">📞</span>
-                <span>+7 (000) 000-00-00</span>
-            </div>
-            <div class="contact-item">
-                <span class="icon">📧</span>
-                <span>e0000@gmail.com</span>
-            </div>
-        </div>
-
-        <div class="stats">
-            <div class="stat-card">
-                <div class="stat-header">
-                    <span class="icon">✉️</span>
-                    <span>Откликов</span>
-                </div>
-                <div class="stat-value">12</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-header">
-                    <span class="icon">✓</span>
-                    <span>Приглашений</span>
-                </div>
-                <div class="stat-value">10</div>
-                <div class="stat-update">+2 новых за сегодня</div>
-            </div>
-            <div class="stat-card rejection-card">
-                <div class="stat-header">
-                    <span class="icon">✕</span>
-                    <span>Отказов</span>
-                </div>
-                <div class="stat-value">1</div>
-                <div class="stat-update">+1 новых за сегодня</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-header">
-                    <span class="icon">📝</span>
-                    <span>Заполненный опыт</span>
-                </div>
-                <div class="stat-value">0/4</div>
-            </div>
-        </div>
-
-        <div class="sections">
-            <div class="section-item">
-                <div class="section-content">
-                    <span class="icon">👤</span>
-                    <div class="section-info">
-                        <h3>Личные данные</h3>
-                        <p>Антон Алексеев, 24 года, Ленинградская обл.</p>
-                    </div>
-                </div>
-                <div class="section-progress">3/4</div>
-                <span class="arrow">→</span>
-            </div>
-            
-            <div class="section-item">
-                <div class="section-content">
-                    <span class="icon">💼</span>
-                    <div class="section-info">
-                        <h3>Специальность</h3>
-                        <p>Инженер-механик</p>
-                    </div>
-                </div>
-                <div class="section-progress">1/4</div>
-                <span class="arrow">→</span>
-            </div>
-            
-            <div class="section-item">
-                <div class="section-content">
-                    <span class="icon">📋</span>
-                    <div class="section-info">
-                        <h3>Профессиональный опыт</h3>
-                        <p>Нет данных</p>
-                    </div>
-                </div>
-                <div class="section-progress">0/4</div>
-                <span class="arrow">→</span>
-            </div>
-        </div>
-
-        <nav class="bottom-nav">
-            <button class="nav-btn" onclick="location.href='vacancies.html'">
-                <span class="icon">🔍</span>
-                <span>Вакансии</span>
-            </button>
-            <button class="nav-btn" onclick="location.href='favorites.html'">
-                <span class="icon">⭐️</span>
-                <span>Избранные</span>
-            </button>
-            <button class="nav-btn" onclick="location.href='index.html#responses'">
-                <span class="icon">✉️</span>
-                <span>Отклики</span>
-            </button>
-            <button class="nav-btn" id="messagesBtn">
-                <span class="icon">💬</span>
-                <span>Сообщения</span>
-            </button>
-            <button class="nav-btn active">
-                <span class="icon">👤</span>
-                <span>Профиль</span>
-            </button>
         </nav>
-    </div>
+    </header>
 
-    <!-- Модальное окно -->
-    <div class="modal" id="messageModal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Отправить сообщение</h2>
-            <input type="text" id="name" placeholder="Ваше имя">
-            <textarea id="message" placeholder="Ваше сообщение"></textarea>
-            <button id="sendBtn">Отправить</button>
-        </div>
-    </div>
+    <main>
+        <section class="hero">
+            <img src="images/we.jpg" alt="Мы" class="hero-image">
+        </section>
+
+        <section class="invitation">
+            <h1>Дорогие гости!</h1>
+            <p>Приглашаем вас разделить<br>с нами радость особенного для нас события<br>и стать частью нашей<br>семейной истории!</p>
+            <div class="date">11.08.2025</div>
+        </section>
+
+        <section class="calendar">
+            <div class="calendar-wrapper">
+                <img src="images/calendar.png" alt="Календарь" class="calendar-image">
+            </div>
+        </section>
+
+        <section class="schedule">
+            <h2>План дня</h2>
+            <div class="timeline">
+                <div class="event">
+                    <img src="images/rings.png" alt="ЗАГС" class="event-icon">
+                    <div class="event-content">
+                        <div class="event-time">14:00</div>
+                        <div class="event-name">ЗАГС</div>
+                        <div class="event-description">Просим приехать заранее к 13:45</div>
+                    </div>
+                </div>
+                <div class="event">
+                    <img src="images/rings.png" alt="Сбор гостей" class="event-icon">
+                    <div class="event-content">
+                        <div class="event-time">15:00</div>
+                        <div class="event-name">Сбор гостей</div>
+                    </div>
+                </div>
+                <div class="event">
+                    <img src="images/rings.png" alt="Банкет" class="event-icon">
+                    <div class="event-content">
+                        <div class="event-time">16:00</div>
+                        <div class="event-name">Банкет</div>
+                    </div>
+                </div>
+                <div class="event">
+                    <img src="images/rings.png" alt="Дискотека" class="event-icon">
+                    <div class="event-content">
+                        <div class="event-time">20:00</div>
+                        <div class="event-name">Дискотека</div>
+                    </div>
+                </div>
+                <div class="event">
+                    <img src="images/rings.png" alt="Заключительная часть" class="event-icon">
+                    <div class="event-content">
+                        <div class="event-time">21:30</div>
+                        <div class="event-name">Заключительная часть</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="location">
+            <h2>Локация</h2>
+            <div class="location-details">
+                <img src="images/location.png" alt="Карта" class="location-image">
+                <div class="address">
+                    <p><strong>ЗАГС:</strong> Safisa, Воробьёвское ш., 2Б, Москва</p>
+                    <p><strong>Банкет:</strong> Теплица Парк, Липовая ул., 3А, посёлок ВНИИССОК</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="dress-code">
+            <h2>Дресс-код</h2>
+            <div class="dress-code-container">
+                <div class="dress-code-column">
+                    <h3>Девушки</h3>
+                    <div class="dress-code-images">
+                        <img src="images/woman_outfit.png" alt="Дресс-код">
+                        <img src="images/woman_outfit.png" alt="Дресс-код">
+                        <img src="images/woman_outfit.png" alt="Дресс-код">
+                    </div>
+                    <p>Платья в пастельных тонах</p>
+                    <div class="color-palette">
+                        <span class="color-dot" style="background-color: #F8E6E6"></span>
+                        <span class="color-dot" style="background-color: #E6E6F8"></span>
+                        <span class="color-dot" style="background-color: #E6F8E6"></span>
+                        <span class="color-dot" style="background-color: #F8F8E6"></span>
+                    </div>
+                </div>
+                <div class="dress-code-column">
+                    <h3>Мужчины</h3>
+                    <div class="dress-code-images">
+                        <img src="images/man_outfit.png" alt="Дресс-код">
+                        <img src="images/man_outfit.png" alt="Дресс-код">
+                        <img src="images/man_outfit.png" alt="Дресс-код">
+                    </div>
+                    <p>Костюмы светлых оттенков</p>
+                    <div class="color-palette">
+                        <span class="color-dot" style="background-color: #F5F5F5"></span>
+                        <span class="color-dot" style="background-color: #E8E8E8"></span>
+                        <span class="color-dot" style="background-color: #DCDCDC"></span>
+                        <span class="color-dot" style="background-color: #D3D3D3"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="rsvp">
+            <h2>Анкета гостя</h2>
+            <form id="rsvpForm">
+                <div class="form-group">
+                    <input type="text" id="name" required placeholder="Ваше имя">
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="attendance" value="yes">
+                        <span class="checkbox-text">Я приду на мероприятие</span>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <p class="menu-title">Предпочтения в еде:</p>
+                    <label class="radio-label">
+                        <input type="radio" name="menu" value="meat" required>
+                        <span class="radio-text">Мясное меню</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="menu" value="fish">
+                        <span class="radio-text">Рыбное меню</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="menu" value="vegetarian">
+                        <span class="radio-text">Вегетарианское меню</span>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <p class="menu-title">Алкогольные напитки:</p>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="drinks" value="wine">
+                        <span class="checkbox-text">Вино</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="drinks" value="champagne">
+                        <span class="checkbox-text">Шампанское</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="drinks" value="beer">
+                        <span class="checkbox-text">Пиво</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="drinks" value="strong">
+                        <span class="checkbox-text">Крепкий алкоголь</span>
+                    </label>
+                </div>
+                <button type="submit" class="submit-btn">Отправить</button>
+            </form>
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>

@@ -161,4 +161,97 @@ document.addEventListener("DOMContentLoaded", function() {
     if (statsSection) {
         observer.observe(statsSection);
     }
+
+    // Обработка отправки анкеты
+    const form = document.getElementById('rsvpForm');
+    
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const name = document.getElementById('name').value;
+        const attendance = document.querySelector('input[name="attendance"]').checked;
+        const menu = document.querySelector('input[name="menu"]:checked')?.value;
+        const drinks = Array.from(document.querySelectorAll('input[name="drinks"]:checked'))
+            .map(input => input.value);
+
+        // Формируем текст сообщения
+        let menuText = '';
+        switch(menu) {
+            case 'meat':
+                menuText = 'мясные блюда';
+                break;
+            case 'fish':
+                menuText = 'рыбные блюда';
+                break;
+            case 'vegetarian':
+                menuText = 'вегетарианские блюда';
+                break;
+        }
+
+        let drinksText = '';
+        if (drinks.length > 0) {
+            drinksText = drinks.map(drink => {
+                switch(drink) {
+                    case 'wine': return 'вино';
+                    case 'champagne': return 'шампанское';
+                    case 'beer': return 'пиво';
+                    case 'strong': return 'крепкий алкоголь';
+                    default: return drink;
+                }
+            }).join(' и ');
+            drinksText = `, предпочитаю ${drinksText}`;
+        }
+
+        const message = `Привет! Я ${name}, ${attendance ? 'я приду' : 'к сожалению, я не смогу прийти'}. Предпочитаю ${menuText}${drinksText}.`;
+
+        try {
+            const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    service_id: 'service_cafl515',
+                    template_id: 'template_c6kr64s',
+                    user_id: 'lZL_OiR6Dm_XnpEY2',
+                    template_params: {
+                        from_name: name,
+                        message: message,
+                        to_email: 'wladzag999@gmail.com'
+                    },
+                    accessToken: 'ABzc2ZS6P14emVOm4EHAj'
+                })
+            });
+
+            if (response.ok) {
+                alert('Спасибо! Ваш ответ отправлен.');
+                form.reset();
+            } else {
+                throw new Error('Ошибка при отправке');
+            }
+        } catch (error) {
+            alert('Произошла ошибка при отправке формы. Пожалуйста, попробуйте позже.');
+        }
+    });
+
+    // Анимация появления элементов при прокрутке
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('section').forEach(section => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(20px)';
+        section.style.transition = 'all 0.5s ease-out';
+        sectionObserver.observe(section);
+    });
 });
