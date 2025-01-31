@@ -329,3 +329,49 @@ input[type="text"] {
 .event:last-child {
     margin-bottom: 0;
 }
+
+.video-container {
+    max-width: 400px;
+    margin: 40px auto 0;
+    padding: 0 20px;
+    position: relative;
+}
+
+.welcome-video {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: transparent !important;
+}
+
+.welcome-video::-webkit-media-controls-enclosure {
+    background: transparent !important;
+}
+
+.welcome-video::-webkit-media-controls-panel {
+    background: transparent !important;
+}
+
+.welcome-video::-webkit-media-controls {
+    background: transparent !important;
+}
+
+.welcome-video::-webkit-media-controls-play-button,
+.welcome-video::-webkit-media-controls-timeline,
+.welcome-video::-webkit-media-controls-current-time-display,
+.welcome-video::-webkit-media-controls-time-remaining-display,
+.welcome-video::-webkit-media-controls-mute-button,
+.welcome-video::-webkit-media-controls-volume-slider {
+    color: white !important;
+    opacity: 0.8;
+}
+
+.welcome-video:hover ::-webkit-media-controls-play-button,
+.welcome-video:hover ::-webkit-media-controls-timeline,
+.welcome-video:hover ::-webkit-media-controls-current-time-display,
+.welcome-video:hover ::-webkit-media-controls-time-remaining-display,
+.welcome-video:hover ::-webkit-media-controls-mute-button,
+.welcome-video:hover ::-webkit-media-controls-volume-slider {
+    opacity: 1;
+}
