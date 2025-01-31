@@ -168,6 +168,9 @@ document.addEventListener("DOMContentLoaded", function() {
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
         
+        const submitBtn = this.querySelector('.submit-btn');
+        submitBtn.classList.add('loading');
+        
         const name = document.getElementById('name').value;
         const attendance = document.querySelector('input[name="attendance"]').checked;
         const menu = document.querySelector('input[name="menu"]:checked')?.value;
@@ -231,6 +234,8 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         } catch (error) {
             alert('Произошла ошибка при отправке формы. Пожалуйста, попробуйте позже.');
+        } finally {
+            submitBtn.classList.remove('loading');
         }
     });
 
