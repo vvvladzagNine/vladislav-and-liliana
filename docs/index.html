@@ -34,8 +34,23 @@
         </section>
 
         <section class="calendar">
-            <div class="calendar-wrapper">
-                <img src="images/calendar.png" alt="Календарь" class="calendar-image">
+            <div class="calendar-header">
+                <button class="calendar-nav" onclick="prevMonth()">&lt;</button>
+                <h2 class="current-month">Сентябрь 2024</h2>
+                <button class="calendar-nav" onclick="nextMonth()">&gt;</button>
+            </div>
+            
+            <div class="calendar-grid">
+                <!-- Заголовки дней недели -->
+                <div class="weekday-header">Пн</div>
+                <div class="weekday-header">Вт</div>
+                <div class="weekday-header">Ср</div>
+                <div class="weekday-header">Чт</div>
+                <div class="weekday-header">Пт</div>
+                <div class="weekday-header">Сб</div>
+                <div class="weekday-header">Вс</div>
+                
+                <!-- Дни календаря будут добавляться через JavaScript -->
             </div>
         </section>
 

@@ -259,4 +259,71 @@ document.addEventListener("DOMContentLoaded", function() {
         section.style.transition = 'all 0.5s ease-out';
         sectionObserver.observe(section);
     });
+
+    // Функции для календаря
+    let currentDate = new Date(2025, 7, 11); // 7 - это август (месяцы начинаются с 0)
+
+    function generateCalendar() {
+        const calendarGrid = document.querySelector('.calendar-grid');
+        const monthElement = document.querySelector('.current-month');
+        
+        // Обновляем заголовок с текущим месяцем
+        const months = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 
+                       'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
+        monthElement.textContent = `${months[currentDate.getMonth()]} ${currentDate.getFullYear()}`;
+        
+        const daysInMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
+        const firstDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1).getDay();
+        
+        // Очищаем календарь
+        while (calendarGrid.children.length > 7) { // Оставляем заголовки дней недели
+            calendarGrid.removeChild(calendarGrid.lastChild);
+        }
+        
+        // Добавляем пустые ячейки до первого дня месяца
+        for (let i = 0; i < (firstDay === 0 ? 6 : firstDay - 1); i++) {
+            const emptyDay = document.createElement('div');
+            emptyDay.className = 'calendar-day';
+            calendarGrid.appendChild(emptyDay);
+        }
+        
+        // Добавляем дни месяца
+        for (let day = 1; day <= daysInMonth; day++) {
+            const dayElement = document.createElement('div');
+            dayElement.className = 'calendar-day';
+            const daySpan = document.createElement('span');
+            daySpan.textContent = day;
+            dayElement.appendChild(daySpan);
+            
+            // Отмечаем текущий день
+            const today = new Date();
+            if (day === today.getDate() && 
+                currentDate.getMonth() === today.getMonth() && 
+                currentDate.getFullYear() === today.getFullYear()) {
+                dayElement.classList.add('today');
+            }
+            
+            // Отмечаем день свадьбы (11 августа 2025)
+            if (day === 11 && 
+                currentDate.getMonth() === 7 && // Август (0-based)
+                currentDate.getFullYear() === 2025) {
+                dayElement.classList.add('selected');
+            }
+            
+            calendarGrid.appendChild(dayElement);
+        }
+    }
+
+    function prevMonth() {
+        currentDate.setMonth(currentDate.getMonth() - 1);
+        generateCalendar();
+    }
+
+    function nextMonth() {
+        currentDate.setMonth(currentDate.getMonth() + 1);
+        generateCalendar();
+    }
+
+    // Инициализируем календарь с текущей датой
+    generateCalendar();
 });
