@@ -48,10 +48,10 @@ body {
 }
 
 .bg-image-1 {
-    width: 177.77px;
-    height: 221.47px;
-    top: 500px;
-    left: calc(50% - 220px);
+    width: 223.2px;
+    height: 279.05px;
+    top: 470px;
+    left: calc(50% - 225px);
     transform: rotate(0deg);
     z-index: -1;
 }
@@ -103,15 +103,18 @@ body {
 
 /* Главный контент */
 .main-content {
-    max-width: 430px;
+    width: 100%;
+    max-width: 390px; /* Ширина изображения we.png */
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0;
     position: relative;
     z-index: 1;
+    overflow-x: hidden;
 }
 
 /* Шапка */
 .header {
+    width: 100%;
     position: relative;
     text-align: center;
     margin-bottom: 30px;
@@ -119,6 +122,7 @@ body {
 
 .header-image {
     width: 100%;
+    max-width: 390px;
     height: auto;
     display: block;
     filter: grayscale(100%);
@@ -814,5 +818,36 @@ input[type="text"] {
     }
     100% {
         transform: translate(-50%, -65%) rotate(0deg);
+    }
+}
+
+/* Добавляем медиа-запрос для мобильных устройств */
+@media screen and (max-width: 430px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .calendar {
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto 40px;
+    }
+
+    .invitation-description {
+        padding: 0 15px;
+    }
+
+    .weekdays-container,
+    .calendar-grid {
+        padding: 0 10px;
+    }
+
+    /* Обновляем позиционирование фоновых изображений */
+    .bg-image-1,
+    .bg-image-2,
+    .bg-image-3 {
+        transform-origin: center;
+        left: auto;
+        right: auto;
     }
 }
