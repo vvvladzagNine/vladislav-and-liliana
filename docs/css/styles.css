@@ -1,9 +1,16 @@
+@font-face {
+    font-family: 'Lighthaus';
+    src: url('../fonts/Lighthaus.otf') format('opentype');
+}
+
 :root {
     --primary-font: 'Cormorant Garamond', serif;
+    --lighthaus-font: 'Lighthaus', serif;
+    --andika-font: 'Andika', sans-serif;
     --primary-color: #1a1a1a;
     --accent-color: #d4af37;
-    --background-color: #fff9f9;
-    --text-color: #333333;
+    --background-color: #ffffff;
+    --text-color: #1a1a1a;
 }
 
 * {
@@ -13,10 +20,329 @@
 }
 
 body {
+    margin: 0;
+    padding: 0;
     font-family: var(--primary-font);
     background-color: var(--background-color);
     color: var(--text-color);
-    line-height: 1.6;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Декоративные элементы фона */
+.background-decorations {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 998;
+}
+
+.bg-image {
+    position: absolute;
+    object-fit: contain;
+}
+
+.bg-image-1 {
+    width: 177.77px;
+    height: 221.47px;
+    top: 500px;
+    left: calc(50% - 220px);
+    transform: rotate(0deg);
+    z-index: -1;
+}
+
+.bg-image-2 {
+    width: 546.15px;
+    height: 465.1px;
+    top: 700px;
+    left: calc(50% - 285px);
+    transform: rotate(0deg);
+    backdrop-filter: blur(4.3px);
+    z-index: -10;
+}
+
+.bg-image-3 {
+    width: 400px;
+    height: 1400px;
+    position: absolute;
+    top: 690px;
+    left: calc(50% + -200px);
+    transform: rotate(0);
+    z-index: 999;
+    pointer-events: none;
+}
+
+/* Фоновые изображения под контентом */
+.background-decorations-bottom {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Фоновые изображения поверх контента */
+.background-decorations-top {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 999;
+}
+
+/* Главный контент */
+.main-content {
+    max-width: 430px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Шапка */
+.header {
+    position: relative;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(100%);
+}
+
+.header-names {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+
+.name {
+    font-family: 'Lighthaus', serif;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 31px;
+    letter-spacing: 0;
+}
+
+.name-left {
+    align-self: flex-start;
+    margin-left: 20px;
+}
+
+.name-right {
+    align-self: flex-end;
+    margin-right: 20px;
+}
+
+.name-and {
+    font-family: 'Lighthaus', serif;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 31px;
+    margin: 10px 0;
+}
+
+/* Текст приглашения */
+.invitation-text {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.invitation-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.invitation-title .dear {
+    font-family: 'Lighthaus', serif;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 31px;
+    letter-spacing: 0;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.invitation-title .names {
+    font-family: 'Lighthaus', serif;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 48px;
+    letter-spacing: 0;
+    display: block;
+    text-align: center;
+}
+
+.invitation-description {
+    font-family: 'Andika', sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 22.1px;
+    letter-spacing: 0;
+    text-align: center;
+    color: #535A62;
+    margin-bottom: 30px;
+    max-width: 420px; /* Увеличили ширину */
+    margin-left: auto;
+    margin-right: auto;
+    white-space: normal;
+    padding: 0 10px; /* Добавили отступы */
+}
+
+/* Дата */
+.wedding-date {
+    font-family: 'Lighthaus', serif;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 48px;
+    letter-spacing: 0;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.wedding-day {
+    font-family: 'Lighthaus', serif;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 31px;
+    letter-spacing: 0;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Календарь */
+.calendar {
+    width: 360px;
+    height: 261px;
+    background: rgba(227, 227, 227, 0.54);
+    backdrop-filter: blur(13px);
+    border-radius: 7px;
+    padding: 24px;
+    margin: 0 auto 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.calendar-header {
+    width: 180px;
+    height: 32px;
+    font-family: 'Lighthaus', serif;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 31.5px;
+    letter-spacing: 0;
+    color: #575757;
+    text-align: center;
+    margin: 0 auto 20px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendar-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 0 24px; /* Добавили отступы слева и справа */
+}
+
+.calendar-row {
+    display: grid;
+    grid-template-columns: repeat(7, 27px);
+    gap: 15px; /* Увеличили горизонтальный отступ между числами */
+    justify-content: center;
+}
+
+.calendar-day {
+    font-family: 'Andika', sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 27.39px;
+    letter-spacing: 0;
+    text-align: center;
+    color: #72758A;
+    height: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Стили для дней недели */
+.weekdays-container {
+    display: grid;
+    grid-template-columns: repeat(7, 27px);
+    gap: 15px; /* Увеличили горизонтальный отступ между днями */
+    justify-content: center;
+    margin-bottom: 5px;
+    margin-top: -10px;
+    border-bottom: 1px solid #C8CDDD;
+    padding: 0 24px 5px 24px; /* Добавили отступы слева и справа */
+}
+
+.weekday {
+    width: 27px;
+    height: 27px;
+    font-family: 'Andika', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 27.39px;
+    letter-spacing: 0;
+    text-align: center;
+    color: #72758A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.weekday.weekend {
+    color: #CA2E72;
+}
+
+.calendar-day.weekend {
+    color: #CA2E72;
+}
+
+.calendar-day.prev-month {
+    color: #BDC8D4;
+}
+
+.calendar-day.selected {
+    position: relative;
+    color: #72758A !important;
+}
+
+.calendar-day.selected::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 49px;
+    height: 49px;
+    background-image: url('../images/heart.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1;
 }
 
 .fixed-header {
@@ -79,16 +405,6 @@ body {
     font-size: 36px;
     font-weight: 300;
     color: var(--accent-color);
-}
-
-.calendar {
-    background: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    padding: 20px;
-    max-width: 400px;
-    margin: 20px auto;
-    font-family: var(--primary-font);
 }
 
 .calendar-wrapper {
@@ -439,13 +755,6 @@ input[type="text"] {
     padding: 0 10px;
 }
 
-.calendar-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 5px;
-    padding: 10px;
-}
-
 .weekday-header {
     font-weight: 500;
     color: var(--text-color);
@@ -454,24 +763,8 @@ input[type="text"] {
     font-size: 14px;
 }
 
-.calendar-day {
-    aspect-ratio: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    width: 40px;
-    height: 40px;
-    margin: 0 auto;
-    position: relative;
-    color: var(--text-color);
-}
-
 .calendar-day:hover {
-    background-color: var(--background-color);
+    background-color: transparent;
 }
 
 .calendar-day.selected {
@@ -484,28 +777,7 @@ input[type="text"] {
 }
 
 .calendar-day.selected::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 55px;
-    height: 55px;
-    transform-origin: center 65%;
-    transform: translate(-50%, -65%);
-    background-image: url('../images/date_ring.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    animation: ringSwing 2s ease-in-out infinite;
-    z-index: 1;
-}
-
-.calendar-day.selected span {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
+    content: none;
 }
 
 .calendar-day.today {

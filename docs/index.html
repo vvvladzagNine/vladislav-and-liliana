@@ -3,199 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Свадьба</title>
+    <title>Свадьба Владислава и Лилианы</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Andika&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav class="fixed-header">
-            <div class="header-content">
-                <span>Владислав & Лилиана</span>
-            </div>
-        </nav>
-    </header>
+    <div class="background-decorations-bottom">
+        <img src="images/bg_images/bg_image1.png" alt="" class="bg-image bg-image-1">
+        <img src="images/bg_images/bg_image2.png" alt="" class="bg-image bg-image-2">
+    </div>
 
-    <main>
-        <section class="hero">
-            <img src="images/we.jpg" alt="Мы" class="hero-image">
+    <div class="background-decorations-top">
+        <img src="images/bg_images/bg_image3.png" alt="" class="bg-image bg-image-3">
+    </div>
+
+    <div class="main-content">
+        <header class="header">
+            <img src="images/we.png" alt="Владислав и Лилиана" class="header-image">
+            <div class="header-names">
+                <span class="name name-left">ВЛАДИСЛАВ</span>
+                <span class="name-and">&</span>
+                <span class="name name-right">ЛИЛИАНА</span>
+            </div>
+        </header>
+
+        <section class="invitation-text">
+            <h1 class="invitation-title">
+                <span class="dear">Дорогие</span>
+                <span class="names">Анжела<br>и Рамиль</span>
+            </h1>
+            <p class="invitation-description">
+                С радостью сообщаем, что мы решили<br>
+                связать наши судьбы и стать одной семьёй.<br>
+                Приглашаем вас разделить с нами этот<br>
+                трогательный и счастливый день, который<br>
+                станет началом нашей новой истории.
+            </p>
         </section>
 
-        <section class="invitation">
-            <h1>Дорогие гости!</h1>
-            <p>Приглашаем вас разделить<br>с нами радость особенного для нас события<br>и стать частью нашей<br>семейной истории!</p>
-            <div class="date">11.08.2025</div>
-            <div class="video-container">
-                <video class="welcome-video" controls playsinline>
-                    <source src="videos/IMG_0802.MOV" type="video/mp4">
-                    Ваш браузер не поддерживает видео.
-                </video>
-            </div>
-        </section>
+        <div class="wedding-date">11.08.2025</div>
+        <div class="wedding-day">ПОНЕДЕЛЬНИК</div>
 
         <section class="calendar">
-            <div class="calendar-header">
-                <button class="calendar-nav" onclick="prevMonth()">&lt;</button>
-                <h2 class="current-month">Сентябрь 2024</h2>
-                <button class="calendar-nav" onclick="nextMonth()">&gt;</button>
+            <div class="calendar-header">АВГУСТ 2025</div>
+            <div class="weekdays-container">
+                <div class="weekday">Пн</div>
+                <div class="weekday">Вт</div>
+                <div class="weekday">Ср</div>
+                <div class="weekday">Чт</div>
+                <div class="weekday">Пт</div>
+                <div class="weekday weekend">Сб</div>
+                <div class="weekday weekend">Вс</div>
             </div>
-            
             <div class="calendar-grid">
-                <!-- Заголовки дней недели -->
-                <div class="weekday-header">Пн</div>
-                <div class="weekday-header">Вт</div>
-                <div class="weekday-header">Ср</div>
-                <div class="weekday-header">Чт</div>
-                <div class="weekday-header">Пт</div>
-                <div class="weekday-header">Сб</div>
-                <div class="weekday-header">Вс</div>
-                
-                <!-- Дни календаря будут добавляться через JavaScript -->
-            </div>
-        </section>
-
-        <section class="schedule">
-            <h2>План дня</h2>
-            <div class="timeline">
-                <div class="event">
-                    <img src="images/rings.png" alt="ЗАГС" class="event-icon">
-                    <div class="event-content">
-                        <div class="event-time">14:00</div>
-                        <div class="event-name">ЗАГС</div>
-                        <div class="event-description">Просим приехать заранее к 13:45</div>
-                    </div>
+                <!-- Первая неделя -->
+                <div class="calendar-row">
+                    <div class="calendar-day prev-month">28</div>
+                    <div class="calendar-day prev-month">29</div>
+                    <div class="calendar-day prev-month">30</div>
+                    <div class="calendar-day prev-month">31</div>
+                    <div class="calendar-day">1</div>
+                    <div class="calendar-day weekend">2</div>
+                    <div class="calendar-day weekend">3</div>
                 </div>
-                <div class="event">
-                    <img src="images/rings.png" alt="Сбор гостей" class="event-icon">
-                    <div class="event-content">
-                        <div class="event-time">15:00</div>
-                        <div class="event-name">Сбор гостей</div>
-                    </div>
+                <!-- Вторая неделя -->
+                <div class="calendar-row">
+                    <div class="calendar-day">4</div>
+                    <div class="calendar-day">5</div>
+                    <div class="calendar-day">6</div>
+                    <div class="calendar-day">7</div>
+                    <div class="calendar-day">8</div>
+                    <div class="calendar-day weekend">9</div>
+                    <div class="calendar-day weekend">10</div>
                 </div>
-                <div class="event">
-                    <img src="images/rings.png" alt="Банкет" class="event-icon">
-                    <div class="event-content">
-                        <div class="event-time">16:00</div>
-                        <div class="event-name">Банкет</div>
-                    </div>
+                <!-- Третья неделя -->
+                <div class="calendar-row">
+                    <div class="calendar-day selected">11</div>
+                    <div class="calendar-day">12</div>
+                    <div class="calendar-day">13</div>
+                    <div class="calendar-day">14</div>
+                    <div class="calendar-day">15</div>
+                    <div class="calendar-day weekend">16</div>
+                    <div class="calendar-day weekend">17</div>
                 </div>
-                <div class="event">
-                    <img src="images/rings.png" alt="Дискотека" class="event-icon">
-                    <div class="event-content">
-                        <div class="event-time">20:00</div>
-                        <div class="event-name">Дискотека</div>
-                    </div>
+                <!-- Четвертая неделя -->
+                <div class="calendar-row">
+                    <div class="calendar-day">18</div>
+                    <div class="calendar-day">19</div>
+                    <div class="calendar-day">20</div>
+                    <div class="calendar-day">21</div>
+                    <div class="calendar-day">22</div>
+                    <div class="calendar-day weekend">23</div>
+                    <div class="calendar-day weekend">24</div>
                 </div>
-                <div class="event">
-                    <img src="images/rings.png" alt="Заключительная часть" class="event-icon">
-                    <div class="event-content">
-                        <div class="event-time">21:30</div>
-                        <div class="event-name">Заключительная часть</div>
-                    </div>
+                <!-- Пятая неделя -->
+                <div class="calendar-row">
+                    <div class="calendar-day">25</div>
+                    <div class="calendar-day">26</div>
+                    <div class="calendar-day">27</div>
+                    <div class="calendar-day">28</div>
+                    <div class="calendar-day">29</div>
+                    <div class="calendar-day weekend">30</div>
+                    <div class="calendar-day weekend">31</div>
                 </div>
             </div>
         </section>
-
-        <section class="location">
-            <h2>Локация</h2>
-            <div class="location-details">
-                <img src="images/location.png" alt="Карта" class="location-image">
-                <div class="address">
-                    <p><strong>ЗАГС:</strong> Safisa, Воробьёвское ш., 2Б, Москва</p>
-                    <p><strong>Банкет:</strong> Теплица Парк, Липовая ул., 3А, посёлок ВНИИССОК</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="dress-code">
-            <h2>Дресс-код</h2>
-            <div class="dress-code-container">
-                <div class="dress-code-column">
-                    <h3>Девушки</h3>
-                    <div class="dress-code-images">
-                        <img src="images/woman_outfit.png" alt="Дресс-код">
-                        <img src="images/woman_outfit.png" alt="Дресс-код">
-                        <img src="images/woman_outfit.png" alt="Дресс-код">
-                    </div>
-                    <p>Платья в пастельных тонах</p>
-                    <div class="color-palette">
-                        <span class="color-dot" style="background-color: #F8E6E6"></span>
-                        <span class="color-dot" style="background-color: #E6E6F8"></span>
-                        <span class="color-dot" style="background-color: #E6F8E6"></span>
-                        <span class="color-dot" style="background-color: #F8F8E6"></span>
-                    </div>
-                </div>
-                <div class="dress-code-column">
-                    <h3>Мужчины</h3>
-                    <div class="dress-code-images">
-                        <img src="images/man_outfit.png" alt="Дресс-код">
-                        <img src="images/man_outfit.png" alt="Дресс-код">
-                        <img src="images/man_outfit.png" alt="Дресс-код">
-                    </div>
-                    <p>Костюмы светлых оттенков</p>
-                    <div class="color-palette">
-                        <span class="color-dot" style="background-color: #F5F5F5"></span>
-                        <span class="color-dot" style="background-color: #E8E8E8"></span>
-                        <span class="color-dot" style="background-color: #DCDCDC"></span>
-                        <span class="color-dot" style="background-color: #D3D3D3"></span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="rsvp">
-            <h2>Анкета гостя</h2>
-            <form id="rsvpForm">
-                <div class="form-group">
-                    <input type="text" id="name" required placeholder="Ваше имя">
-                </div>
-                <div class="form-group">
-                    <label class="checkbox-label">
-                        <input type="checkbox" name="attendance" value="yes">
-                        <span class="checkbox-text">Я приду на мероприятие</span>
-                    </label>
-                </div>
-                <div class="form-group">
-                    <p class="menu-title">Предпочтения в еде:</p>
-                    <label class="radio-label">
-                        <input type="radio" name="menu" value="meat" required>
-                        <span class="radio-text">Мясное меню</span>
-                    </label>
-                    <label class="radio-label">
-                        <input type="radio" name="menu" value="fish">
-                        <span class="radio-text">Рыбное меню</span>
-                    </label>
-                    <label class="radio-label">
-                        <input type="radio" name="menu" value="vegetarian">
-                        <span class="radio-text">Вегетарианское меню</span>
-                    </label>
-                </div>
-                <div class="form-group">
-                    <p class="menu-title">Алкогольные напитки:</p>
-                    <label class="checkbox-label">
-                        <input type="checkbox" name="drinks" value="wine">
-                        <span class="checkbox-text">Вино</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <input type="checkbox" name="drinks" value="champagne">
-                        <span class="checkbox-text">Шампанское</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <input type="checkbox" name="drinks" value="beer">
-                        <span class="checkbox-text">Пиво</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <input type="checkbox" name="drinks" value="strong">
-                        <span class="checkbox-text">Крепкий алкоголь</span>
-                    </label>
-                </div>
-                <button type="submit" class="submit-btn">
-                    <span class="button-text">Отправить</span>
-                    <span class="button-loader"></span>
-                </button>
-            </form>
-        </section>
-    </main>
+    </div>
 
     <script src="script.js"></script>
 </body>
