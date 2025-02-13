@@ -19,6 +19,12 @@
     box-sizing: border-box;
 }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -26,8 +32,6 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
     min-height: 100vh;
-    position: relative;
-    overflow-x: hidden;
 }
 
 /* Декоративные элементы фона */
@@ -83,10 +87,11 @@ body {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 100%;
+    width: 100vw;
     height: 100%;
     pointer-events: none;
     z-index: -1;
+    overflow: hidden;
 }
 
 /* Фоновые изображения поверх контента */
@@ -95,16 +100,17 @@ body {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 100%;
+    width: 100vw;
     height: 100%;
     pointer-events: none;
     z-index: 999;
+    overflow: hidden;
 }
 
 /* Главный контент */
 .main-content {
     width: 100%;
-    max-width: 390px; /* Ширина изображения we.png */
+    max-width: 390px;
     margin: 0 auto;
     padding: 0;
     position: relative;
@@ -823,7 +829,12 @@ input[type="text"] {
 
 /* Добавляем медиа-запрос для мобильных устройств */
 @media screen and (max-width: 430px) {
-    body {
+    html, body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .main-content {
         overflow-x: hidden;
     }
 
