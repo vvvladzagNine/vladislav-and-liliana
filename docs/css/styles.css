@@ -127,13 +127,13 @@ body {
     filter: grayscale(100%);
 }
 
-.header-image {
+/* .header-image {
     width: 100%;
     max-width: 390px;
     height: auto;
     display: block;
     filter: grayscale(100%);
-}
+} */
 
 .header-names {
     position: absolute;
