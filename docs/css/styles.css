@@ -119,11 +119,12 @@ body {
 }
 
 /* Шапка */
-.header {
-    width: 100%;
-    position: relative;
-    text-align: center;
-    margin-bottom: 30px;
+.header-image {
+    width: 100vw; /* Устанавливаем ширину на 100% экрана */
+    max-width: none; /* Убираем ограничение по ширине */
+    height: auto;
+    display: block;
+    filter: grayscale(100%);
 }
 
 .header-image {
@@ -205,7 +206,7 @@ body {
 .invitation-description {
     font-family: 'Andika', sans-serif;
     font-weight: 400;
-    font-size: 17px;
+    font-size: 16px;
     line-height: 22.1px;
     letter-spacing: 0;
     text-align: center;
@@ -344,7 +345,7 @@ body {
 .calendar-day.selected::after {
     content: '';
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 49px;
