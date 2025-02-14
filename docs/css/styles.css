@@ -20,9 +20,10 @@
 }
 
 html, body {
-    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
     overflow-x: hidden;
-    position: relative;
 }
 
 body {
@@ -109,31 +110,21 @@ body {
 
 /* Главный контент */
 .main-content {
-    width: 100%;
-    max-width: 390px;
-    margin: 0 auto;
+    width: 100vw; /* Устанавливаем ширину на 100% экрана */
+    max-width: none; /* Убираем ограничение по ширине */
+    margin: 0;
     padding: 0;
     position: relative;
     z-index: 1;
-    overflow-x: hidden;
 }
 
-/* Шапка */
+
+
 .header-image {
     width: 100vw; /* Устанавливаем ширину на 100% экрана */
-    max-width: none; /* Убираем ограничение по ширине */
     height: auto;
     display: block;
-    filter: grayscale(100%);
 }
-
-/* .header-image {
-    width: 100%;
-    max-width: 390px;
-    height: auto;
-    display: block;
-    filter: grayscale(100%);
-} */
 
 .header-names {
     position: absolute;
