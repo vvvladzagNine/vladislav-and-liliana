@@ -23,6 +23,8 @@ html, body {
     max-width: 100%;
     overflow-x: hidden;
     position: relative;
+    display: grid;
+    grid-template-columns: 100%;
 }
 
 body {
@@ -32,6 +34,8 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
     min-height: 100vh;
+    display: grid;
+    grid-template-columns: 100%;
 }
 
 /* Декоративные элементы фона */
@@ -115,18 +119,18 @@ body {
     padding: 0;
     position: relative;
     z-index: 1;
-    overflow: visible;
 }
 
 /* Шапка */
 .header-container {
-    width: 100%;
+    width: 100vw;
+    justify-self: center;
     position: relative;
     margin-bottom: 30px;
 }
 
 .header-image {
-    width: 100%;
+    width: 100vw;
     height: auto;
     object-fit: contain;
     display: block;
