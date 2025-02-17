@@ -77,7 +77,7 @@ body {
     width: 223px;
     height: 279px;
     top: -90px;
-    left: min(-20px, -5%);
+    left: min(-120px, -5%);
     z-index: -1;
 }
 
@@ -97,7 +97,7 @@ body {
     width: 400px;
     height: 1400px;
     top: -430px;
-    left: min(-30px, -8%);
+    left: min(-30px, 8%);
     transform: rotate(0);
     z-index: 2;
 }
