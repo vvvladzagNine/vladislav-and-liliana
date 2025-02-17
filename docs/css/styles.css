@@ -77,9 +77,8 @@ body {
     width: 223px;
     height: 279px;
     top: -90px;
-    left: -20px;
+    left: -90px;
     z-index: -1;
-    
 }
 
 .bg-image-2 {
@@ -163,6 +162,7 @@ body {
     position: relative;
     margin-bottom: 40px;
     overflow: visible;
+    max-width: 100%;
 }
 
 .invitation-title {
