@@ -115,22 +115,24 @@ body {
     padding: 0;
     position: relative;
     z-index: 1;
-    overflow-x: hidden;
+    overflow: visible;
 }
 
 /* Шапка */
-.header-image {
-    width: 100vw; /* Устанавливаем ширину на 100% экрана */
-    max-width: none; /* Убираем ограничение по ширине */
-    height: auto;
-    display: block;
-    filter: grayscale(100%);
+.header-container {
+    width: 100vw;
+    position: relative;
+    margin-bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
 }
 
 .header-image {
-    width: 100%;
-    max-width: 390px;
+    width: 100vw;
     height: auto;
+    object-fit: contain;
     display: block;
     filter: grayscale(100%);
 }
