@@ -162,30 +162,94 @@
             <img src="images/outfit_examples.png" alt="Примеры образов" class="outfit-examples">
 
             <div class="warning-container">
-                <!-- <img src="images/bg_images/bg_image6.png" alt="" class="bg-image bg-image-6"> -->
                 <p class="dress-code-warning">
                     При выборе наряда просим избегать белых и ярких цветов
                 </p>
+                <img src="images/bg_images/bg_image6.png" alt="" class="bg-image bg-image-6">
             </div>
 
             <div class="color-circles-container forbidden">
-                <div class="color-circle forbidden">
+                <div class="color-circle" style="background-color: #FF3437;">
                     <div class="cross"></div>
-                    <div style="background-color: #FF0000;"></div>
                 </div>
-                <div class="color-circle forbidden">
+                <div class="color-circle" style="background-color: #00D05E;">
                     <div class="cross"></div>
-                    <div style="background-color: #FF69B4;"></div>
                 </div>
-                <div class="color-circle forbidden">
+                <div class="color-circle" style="background-image: url('images/prohibited_color.png'); background-size: cover; background-position: center;">
                     <div class="cross"></div>
-                    <div style="background-color: #FFFF00;"></div>
                 </div>
-                <div class="color-circle forbidden">
+                <div class="color-circle" style="background-color: #FFFFFF; border: 2px solid #CCCCCC;">
                     <div class="cross"></div>
-                    <div style="background-color: #FFFFFF;"></div>
                 </div>
             </div>
+        </section>
+
+        <section class="details">
+            <div class="details-content">
+                <h2 class="details-title">Детали</h2>
+                <p class="details-description">
+                    Дорогие гости, мы не хотим обременять вас выбором подарка, поэтому будем рады вкладу
+                    в бюджет молодой семьи
+                </p>
+            </div>
+            <img src="images/bg_images/bg_image7.png" alt="" class="bg-image bg-image-7">
+            <img src="images/bg_images/bg_image8.png" alt="" class="bg-image bg-image-8">
+        </section>
+
+        <section class="guest-form">
+            <h2 class="guest-form-title">Анкета гостя</h2>
+            <p class="guest-form-subtitle">
+                Просим заполнить анкету<br>до 1 июня 2025 года.
+            </p>
+
+            <form id="guestForm" class="form-container">
+                <div class="form-group">
+                    <label>Имя одного из приглашенных</label>
+                    <input type="text" name="name" placeholder="Имя и фамилия" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Будете присутствовать на торжестве?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="attendance" value="yes" required> Да, буду</label>
+                        <label><input type="radio" name="attendance" value="no"> Не смогу</label>
+                        <label><input type="radio" name="attendance" value="late"> Буду, но не к началу торжества</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Что предпочитаете из напитков?</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="drinks" value="champagne"> Шампанское</label>
+                        <label><input type="checkbox" name="drinks" value="white_wine"> Белое вино</label>
+                        <label><input type="checkbox" name="drinks" value="red_wine"> Красное вино</label>
+                        <label><input type="checkbox" name="drinks" value="strong"> Крепкий алкоголь</label>
+                        <label><input type="checkbox" name="drinks" value="beer"> Пиво</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Есть ли у вас аллергия?</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="allergy" value="nuts"> Орехи</label>
+                        <label><input type="checkbox" name="allergy" value="citrus"> Цитрусы</label>
+                        <label><input type="checkbox" name="allergy" value="lactose"> Лактоза</label>
+                        <label><input type="checkbox" name="allergy" value="gluten"> Глютен</label>
+                        <label><input type="checkbox" name="allergy" value="chocolate"> Шоколад</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Предпочтение в еде</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="food" value="no_meat"> Не ем мясо</label>
+                        <label><input type="checkbox" name="food" value="no_fish"> Не ем рыбу</label>
+                        <label><input type="checkbox" name="food" value="no_seafood"> Не ем морепродукты</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-button">Отправить</button>
+            </form>
         </section>
     </div>
 
