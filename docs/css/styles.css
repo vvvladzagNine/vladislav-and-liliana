@@ -1252,8 +1252,8 @@ input[type="checkbox"]:checked::after {
 }
 
 .form-container {
-    max-width: 390px;
-    margin: 0 auto;
+    max-width: 400px;
+    margin: 0 0;
 }
 
 .form-group label {
