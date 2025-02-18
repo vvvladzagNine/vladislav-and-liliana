@@ -30,6 +30,7 @@ html, body {
 body {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
     font-family: var(--primary-font);
     background-color: var(--background-color);
     color: var(--text-color);
@@ -56,11 +57,12 @@ body {
 }
 
 .main-content {
+    position: relative;
+    overflow: visible;
     width: 100%;
     max-width: 390px;
     margin: 0 auto;
     padding: 0;
-    position: relative;
     z-index: 1;
 }
 
@@ -196,6 +198,7 @@ body {
 /* Текст приглашения */
 .invitation-text {
     position: relative;
+    overflow: visible;
     margin-bottom: 40px;
 }
 
@@ -716,25 +719,50 @@ h2 {
     margin-bottom: 30px;
 }
 
-.color-circles-container.forbidden {
+.color-circles-container {
     width: 234px;
     height: 50px;
     display: flex;
     gap: 11px;
-    margin: 0 auto;
+    margin: 0 auto 30px;
 }
 
-.color-circles-container.forbidden .color-circle {
+.color-circle {
     width: 50px;
     height: 50px;
     border-radius: 50%;
+}
+
+/* Разрешенные цвета */
+.color-circles-container:not(.forbidden) .color-circle:nth-child(1) {
+    background-color: #1C1D21;
+}
+
+.color-circles-container:not(.forbidden) .color-circle:nth-child(2) {
+    background-color: #32405D;
+}
+
+.color-circles-container:not(.forbidden) .color-circle:nth-child(3) {
+    background-color: #889B93;
+}
+
+.color-circles-container:not(.forbidden) .color-circle:nth-child(4) {
+    background-color: #CDC5B7;
+}
+
+/* Запрещенные цвета */
+.color-circles-container.forbidden {
+    margin-top: 20px;
+}
+
+.color-circles-container.forbidden .color-circle {
     position: relative;
 }
 
 .cross {
     position: absolute;
-    right: -8px;
-    bottom: -8px;
+    right: -5px;
+    bottom: -5px;
     width: 26px;
     height: 26px;
     background-color: white;
@@ -752,7 +780,6 @@ h2 {
     width: 3px;
     height: 15px;
     transform-origin: center;
-    border-radius: 2px;
 }
 
 .cross::before {
@@ -795,6 +822,16 @@ h2 {
 
 .form-group {
     margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #757693;
+    width: 361px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-group:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
 }
 
 /* Стили для поля ввода */
@@ -1219,10 +1256,6 @@ input[type="checkbox"]:checked::after {
     margin: 0 auto;
 }
 
-.form-group {
-    margin-bottom: 30px;
-}
-
 .form-group label {
     display: block;
     margin-bottom: 10px;
@@ -1253,7 +1286,9 @@ input[type="text"] {
 }
 
 .submit-button {
-    width: 100%;
+    width: 361px;
+    margin: 0 auto;
+    display: block;
     padding: 15px;
     background: #000000;
     color: white;
@@ -1266,4 +1301,31 @@ input[type="text"] {
 
 .submit-button:hover {
     background: #333333;
+}
+
+/* Обновляем стили для всех секций, где есть декорации */
+.invitation-text,
+.calendar,
+.location,
+.schedule,
+.dress-code,
+.details,
+.warning-container {
+    position: relative;
+    overflow: visible;
+}
+
+/* Обновляем стили для мобильных устройств */
+@media screen and (max-width: 768px) {
+    .main-content {
+        padding: 0;
+        overflow: visible;
+    }
+
+    /* Увеличиваем отступы для контента, чтобы декорации не обрезались */
+    section {
+        margin-left: 20px;
+        margin-right: 20px;
+        overflow: visible;
+    }
 }
