@@ -591,10 +591,10 @@ h2 {
 }
 
 .location {
-    width: 110%;
-    max-width: 590px;
+    width: 120%;
+    max-width: 680px;
     height: 634px;
-    margin: 120px -18px 0;
+    margin: 120px -25px 0;
     padding: 10px 16px;
     background-image: url('../images/location_main.png');
     background-size: cover;
