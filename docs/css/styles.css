@@ -146,7 +146,7 @@ body {
 .header-container {
     width: 100%;
     position: relative;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
     display: block;
     text-align: center;
 }
@@ -201,6 +201,7 @@ body {
     position: relative;
     overflow: visible;
     margin-bottom: 40px;
+    margin-top: 48px;
 }
 
 .invitation-title {
@@ -721,7 +722,7 @@ h2 {
     letter-spacing: 0;
     text-align: center;
     color: #535A62;
-    margin-bottom: 40px;
+    margin-bottom: 96px;
 }
 
 .dress-code-subtitle {
@@ -731,7 +732,7 @@ h2 {
     line-height: 31px;
     letter-spacing: 0;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
 }
 
 .color-circles-container {
@@ -739,7 +740,7 @@ h2 {
     height: 50px;
     display: flex;
     gap: 11px;
-    margin: 0 auto 30px;
+    margin: 0 auto 120px;
 }
 
 .color-circle {
@@ -768,10 +769,12 @@ h2 {
 /* Запрещенные цвета */
 .color-circles-container.forbidden {
     margin-top: 20px;
+    
 }
 
 .color-circles-container.forbidden .color-circle {
     position: relative;
+    
 }
 
 .cross {
@@ -843,7 +846,7 @@ h2 {
 
 .guest-form {
     width: 100%;
-    padding: 16px 0;
+    padding: 48px 16px;
     background: #5A5B70;
     color: white;
     box-sizing: border-box;
@@ -900,7 +903,15 @@ h2 {
     padding-bottom: 0;
 }
 
-.form-group label {
+
+.form-group-label {
+    display: block;
+    margin-bottom: 8px;
+    font-family: var(--andika-font);
+    color: #FFFFFF;
+}
+
+.label-headline {
     display: block;
     margin-bottom: 20px;
     font-family: var(--andika-font);
@@ -1247,8 +1258,8 @@ input[type="checkbox"]:checked::after {
         position: relative;
         left: 50%;
         right: 50%;
-        margin-left: -50vw;
-        margin-right: -50vw;
+        /* margin-left: -50vw;
+        margin-right: -50vw; */
     }
     
     .radio-group,
