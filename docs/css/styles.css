@@ -82,7 +82,8 @@ body {
     height: 279px;
     top: -90px;
     left: 0;
-    transform: translateX(-79px);
+    margin-left: -160px;
+    /* transform: translateX(-79px); */
     z-index: -1;
 }
 
@@ -883,7 +884,7 @@ h2 {
     box-sizing: border-box;
     /* left: 16px;
     right: 16px; */
-    padding: 16px;
+    /* padding: 16px; */
     position: relative;
     display: flex;
     flex-direction: column;
