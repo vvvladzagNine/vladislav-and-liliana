@@ -2,7 +2,9 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <title>Свадьба Владислава и Лилианы</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -254,5 +256,27 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+        // Предотвращение автоматической прокрутки на мобильных устройствах
+        document.addEventListener('DOMContentLoaded', function() {
+            // Сохраняем позицию прокрутки
+            let lastScrollPosition = window.scrollY;
+            
+            // Отключаем автоматическую прокрутку при фокусе на элементах формы
+            const formElements = document.querySelectorAll('input, select, textarea');
+            formElements.forEach(element => {
+                element.addEventListener('focus', function(e) {
+                    lastScrollPosition = window.scrollY;
+                });
+                
+                element.addEventListener('blur', function(e) {
+                    // Небольшая задержка для корректной работы
+                    setTimeout(() => {
+                        window.scrollTo(0, lastScrollPosition);
+                    }, 10);
+                });
+            });
+        });
+    </script>
 </body>
 </html>
