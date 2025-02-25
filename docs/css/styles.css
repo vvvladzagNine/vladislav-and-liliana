@@ -107,11 +107,11 @@ body {
 
 .bg-image-4 {
     position: absolute;
-    width: 574.2px;
-    height: 234.7px;
+    width: 100%;
+    height: 320.7px;
     top: 0;
     left: 0;
-    transform: translate(-87px, -120px);
+    transform: translate(-87px, -180px);
     z-index: 1;
 }
 
@@ -270,7 +270,7 @@ body {
     height: 261px;
     background: rgba(227, 227, 227, 0.54);
     backdrop-filter: blur(13px);
-    border-radius: 7px;
+    border-radius: 0px;
     padding: 24px;
     margin: 0 auto 40px;
     position: relative;
