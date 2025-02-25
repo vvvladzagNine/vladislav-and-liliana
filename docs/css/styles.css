@@ -843,13 +843,13 @@ h2 {
 
 .guest-form {
     width: 100%;
-    padding: 48px 0;
+    padding: 16px 0;
     background: #5A5B70;
     color: white;
     box-sizing: border-box;
     overflow-x: hidden;
     position: relative;
-    margin: 0 auto;
+    margin: 0;
     left: 0;
     right: 0;
 }
@@ -874,11 +874,11 @@ h2 {
 }
 
 .form-container {
-    width: 90%;
-    max-width: 300px;
+    width: 100%;
+    /* max-width: 300px; */
     margin: 0 auto;
     box-sizing: border-box;
-    padding: 0;
+    padding: 16px;
     left: 0;
     right: 0;
     position: relative;
@@ -1222,9 +1222,9 @@ input[type="checkbox"]:checked::after {
     }
     
     .guest-form {
-        width: 100vw;
-        max-width: 100vw;
-        padding: 58px 0;
+        width: 100%;
+        max-width: 100%;
+        padding: 16px 0;
         box-sizing: border-box;
         overflow-x: hidden;
         position: relative;
