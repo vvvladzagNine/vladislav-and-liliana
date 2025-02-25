@@ -279,8 +279,8 @@ body {
 .calendar {
     width: 360px;
     height: 261px;
-    background: rgba(227, 227, 227, 0.5);
-    backdrop-filter: blur(13px);
+    background: rgba(227, 227, 227, 0.4);
+    backdrop-filter: blur(2.5px);
     border-radius: 0px;
     padding: 24px;
     margin: 0 auto 40px;
