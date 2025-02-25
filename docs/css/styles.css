@@ -215,7 +215,7 @@ body {
     line-height: 31px;
     letter-spacing: 0;
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 6px;
 }
 
 .invitation-title .names {
@@ -236,12 +236,12 @@ body {
     letter-spacing: 0;
     text-align: center;
     color: #535A62;
-    margin-bottom: 30px;
-    max-width: 420px; /* Увеличили ширину */
+    margin-bottom: 88px;
+    max-width: 420px;
     margin-left: auto;
     margin-right: auto;
     white-space: normal;
-    padding: 0 10px; /* Добавили отступы */
+    padding: 0 10px;
 }
 
 /* Дата */
@@ -279,7 +279,7 @@ body {
 .calendar {
     width: 360px;
     height: 261px;
-    background: rgba(227, 227, 227, 0.54);
+    background: rgba(227, 227, 227, 0.5);
     backdrop-filter: blur(13px);
     border-radius: 0px;
     padding: 24px;
@@ -683,6 +683,9 @@ h2 {
     gap: 8px;
     box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s;
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
 }
 
 .location-map-button:hover {
@@ -820,6 +823,12 @@ h2 {
 .dress-code-warning {
     position: relative;
     z-index: 1;
+    font-family: var(--andika-font);
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 24.7px;
+    text-align: center;
+    color: #535A62;
 }
 
 .rsvp {
@@ -1105,6 +1114,13 @@ input[type="checkbox"]:checked::after {
         margin-right: 0;
         padding: 10px 0;
     }
+    
+    /* Улучшаем кликабельность кнопки на планшетах */
+    .location-map-button {
+        position: relative;
+        z-index: 10;
+        pointer-events: auto;
+    }
 }
 
 /* Добавляем медиа-запрос для мобильных устройств */
@@ -1145,6 +1161,8 @@ input[type="checkbox"]:checked::after {
         margin: 60px 0 0;
         height: auto;
         min-height: 500px;
+        position: relative;
+        z-index: 1;
     }
     
     .location-content {
@@ -1152,6 +1170,8 @@ input[type="checkbox"]:checked::after {
         max-width: 303px;
         height: auto;
         min-height: 268px;
+        position: relative;
+        z-index: 5;
     }
 
     .calendar {
@@ -1228,5 +1248,14 @@ input[type="checkbox"]:checked::after {
         height: auto;
         min-height: 267px;
         padding: 48px 10px;
+    }
+
+    /* Улучшаем кликабельность кнопки на мобильных устройствах */
+    .location-map-button {
+        width: 100%;
+        max-width: 271px;
+        position: relative;
+        z-index: 10;
+        pointer-events: auto;
     }
 }

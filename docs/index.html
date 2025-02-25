@@ -114,7 +114,7 @@
                     Липовая ул., 3А,<br>
                     пос. ВНИИСCОК, г. Москва
                 </p>
-                <a href="https://yandex.ru/maps/-/CHq-zWN2" target="_blank" class="location-map-button">Показать на карте</a>
+                <a href="https://yandex.ru/maps/-/CHq-zWN2" target="_blank" class="location-map-button" onclick="window.open('https://yandex.ru/maps/-/CHq-zWN2', '_blank')">Показать на карте</a>
             </div>
         </section>
 
@@ -148,8 +148,8 @@
             
             <p class="dress-code-description">
                 Мы с радостью приглашаем вас разделить с нами самый важный день в нашей жизни. 
-                Просим вас поддержать атмосферу праздника, соблюдая дресс-код: для мужчин — классические костюмы, 
-                для женщин — вечерние наряды. Ваш элегантный вид станет прекрасным дополнением к нашему торжеству!
+                Просим вас поддержать атмосферу праздника, соблюдая дресс-код: для мужчин — <strong><em>классические костюмы</em></strong>, 
+                для женщин — <strong><em>вечерние наряды</em></strong>. Ваш элегантный вид станет прекрасным дополнением к нашему торжеству!
             </p>
 
             <h3 class="dress-code-subtitle">Цветовая гамма<br>и примеры образов</h3>
@@ -276,6 +276,17 @@
                     }, 10);
                 });
             });
+            
+            // Обработчик для кнопки "Показать на карте"
+            const mapButton = document.querySelector('.location-map-button');
+            if (mapButton) {
+                mapButton.addEventListener('click', function(e) {
+                    e.preventDefault(); // Предотвращаем стандартное поведение ссылки
+                    const mapUrl = this.getAttribute('href');
+                    // Открываем карту в новом окне
+                    window.open(mapUrl, '_blank');
+                });
+            }
         });
     </script>
 </body>
