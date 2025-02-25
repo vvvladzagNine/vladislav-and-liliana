@@ -111,7 +111,7 @@ body {
     height: 320.7px;
     top: 0;
     left: 0;
-    transform: translate(-87px, -180px);
+    transform: translate(0, -180px);
     z-index: 1;
 }
 
@@ -865,9 +865,11 @@ h2 {
     margin-bottom: 30px;
     padding-bottom: 30px;
     border-bottom: 1px solid #757693;
-    width: 361px;
+    width: 100%;
+    max-width: 361px;
     margin-left: auto;
     margin-right: auto;
+    box-sizing: border-box;
 }
 
 .form-group:last-child {
@@ -1212,6 +1214,32 @@ input[type="checkbox"]:checked::after {
         left: auto;
         right: auto;
     }
+
+    /* Исправляем отображение формы на мобильных устройствах */
+    .form-container {
+        width: 100%;
+        padding: 0 10px;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .form-group {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .guest-form {
+        width: 100%;
+        padding: 48px 16px;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+    
+    .submit-button {
+        width: 100%;
+        max-width: 100%;
+    }
 }
 
 .details {
@@ -1313,9 +1341,11 @@ input[type="checkbox"]:checked::after {
     margin-bottom: 30px;
     padding-bottom: 30px;
     border-bottom: 1px solid #757693;
-    width: 361px;
+    width: 100%;
+    max-width: 361px;
     margin-left: auto;
     margin-right: auto;
+    box-sizing: border-box;
 }
 
 .form-group:last-child {
@@ -1425,7 +1455,8 @@ input[type="checkbox"]:checked::after {
 }
 
 .submit-button {
-    width: 361px;
+    width: 100%;
+    max-width: 361px;
     margin: 0 auto;
     display: block;
     padding: 15px;
