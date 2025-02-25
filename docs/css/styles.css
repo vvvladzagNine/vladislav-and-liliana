@@ -641,6 +641,7 @@ h2 {
     gap: 20px;
     position: relative;
     z-index: 2;
+    margin: 0 auto; /* Добавляем автоматические отступы для центрирования */
 }
 
 .location-title {
@@ -1096,6 +1097,14 @@ input[type="checkbox"]:checked::after {
         margin-right: 20px;
         overflow: visible;
     }
+    
+    /* Исправляем центрирование location-content */
+    .location {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 10px 0;
+    }
 }
 
 /* Добавляем медиа-запрос для мобильных устройств */
@@ -1127,6 +1136,22 @@ input[type="checkbox"]:checked::after {
         position: relative;
         display: block;
         overflow: visible;
+    }
+    
+    /* Дополнительные стили для location на мобильных устройствах */
+    .location {
+        width: 100%;
+        max-width: 100%;
+        margin: 60px 0 0;
+        height: auto;
+        min-height: 500px;
+    }
+    
+    .location-content {
+        width: 90%;
+        max-width: 303px;
+        height: auto;
+        min-height: 268px;
     }
 
     .calendar {
