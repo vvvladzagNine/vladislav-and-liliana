@@ -846,16 +846,14 @@ h2 {
 }
 
 .guest-form {
-    width: 100%;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
     padding: 48px 16px;
     background: #5A5B70;
     color: white;
-    box-sizing: border-box;
-    overflow-x: hidden;
     position: relative;
-    margin: 0;
-    left: 0;
-    right: 0;
+    box-sizing: border-box;
 }
 
 .guest-form-title {
@@ -879,12 +877,8 @@ h2 {
 
 .form-container {
     width: 100%;
-    /* max-width: 300px; */
+    max-width: 390px;
     margin: 0 auto;
-    box-sizing: border-box;
-    /* left: 16px;
-    right: 16px; */
-    /* padding: 16px; */
     position: relative;
     display: flex;
     flex-direction: column;
@@ -1172,11 +1166,12 @@ input[type="checkbox"]:checked::after {
     }
 
     .main-content {
-        overflow-x: hidden;
+        /* overflow-x: hidden; */
         width: 100%;
-        max-width: 100%;
+        /* max-width: 100%; */
         position: relative;
-        display: block;
+        /* display: block; */
+        
     }
     
     .header-container {
@@ -1232,13 +1227,13 @@ input[type="checkbox"]:checked::after {
 
     /* Исправляем отображение формы на мобильных устройствах */
     .form-container {
-        width: 90%;
+        width: 100%;
         max-width: 300px;
         margin: 0 auto;
         box-sizing: border-box;
-        padding: 0 16px;
-        left: 16px;
-        right: 16px;
+        /* padding: 0 16px; */
+        /* left: 16px;
+        right: 16px; */
         position: relative;
     }
     
@@ -1251,16 +1246,11 @@ input[type="checkbox"]:checked::after {
     }
     
     .guest-form {
-        width: 100%;
-        max-width: 100%;
-        padding: 16px 0;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
+        padding: 48px 16px;
         box-sizing: border-box;
-        overflow-x: hidden;
-        position: relative;
-        left: 50%;
-        right: 50%;
-        /* margin-left: -50vw;
-        margin-right: -50vw; */
     }
     
     .radio-group,
