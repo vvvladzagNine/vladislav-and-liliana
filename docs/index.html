@@ -196,9 +196,9 @@
             <div class="contacts-container">
                 <div class="contact-person">
                     <div class="contact-name">Галина</div>
-                    <div class="contact-phone" onclick="copyToClipboard('+7 (925) 003-45-39')" data-phone="+7 (925) 003-45-39">
+                    <a href="tel:+79250034539" class="contact-phone" onclick="event.preventDefault(); copyToClipboard('+7 (925) 003-45-39')" data-phone="+7 (925) 003-45-39">
                         <span>+7 </span><span>(925) </span><span>003-45-39</span>
-                    </div>
+                    </a>
                     <div class="contact-buttons">
                         <a href="https://t.me/lozya1" class="contact-button telegram-button">
                             <img src="images/ic_baseline-telegram.png" alt="Telegram" class="contact-icon">
@@ -213,9 +213,9 @@
                 
                 <div class="contact-person">
                     <div class="contact-name">Валентина</div>
-                    <div class="contact-phone" onclick="copyToClipboard('+7 (985) 955-85-93')" data-phone="+7 (985) 955-85-93">
+                    <a href="tel:+79859558593" class="contact-phone" onclick="event.preventDefault(); copyToClipboard('+7 (985) 955-85-93')" data-phone="+7 (985) 955-85-93">
                         <span>+7 </span><span>(985) </span><span>955-85-93</span>
-                    </div>
+                    </a>
                     <div class="contact-buttons">
                         <a href="https://t.me/Valya_Kremenitskaya" class="contact-button telegram-button">
                             <img src="images/ic_baseline-telegram.png" alt="Telegram" class="contact-icon">
@@ -331,6 +331,24 @@
                     window.open(mapUrl, '_blank');
                 });
             }
+            
+            // Обработчик для номеров телефонов
+            const phoneLinks = document.querySelectorAll('.contact-phone');
+            phoneLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // На iOS устройствах позволяем стандартное поведение (открытие диалога звонка)
+                    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+                    if (isIOS) {
+                        // Не предотвращаем стандартное поведение для iOS
+                        return true;
+                    } else {
+                        // Для других устройств предотвращаем стандартное поведение и копируем номер
+                        e.preventDefault();
+                        const phoneNumber = this.getAttribute('data-phone');
+                        copyToClipboard(phoneNumber);
+                    }
+                });
+            });
         });
 
         // Функция для копирования номера телефона в буфер обмена

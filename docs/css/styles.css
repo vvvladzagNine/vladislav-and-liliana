@@ -904,6 +904,16 @@ h2 {
     text-decoration: none !important;
     -webkit-text-decoration: none !important;
     -webkit-tap-highlight-color: transparent;
+    display: inline-block;
+}
+
+.contact-phone:link, 
+.contact-phone:visited, 
+.contact-phone:hover, 
+.contact-phone:active {
+    color: #535A62;
+    text-decoration: none !important;
+    -webkit-text-decoration: none !important;
 }
 
 .contact-phone span {
