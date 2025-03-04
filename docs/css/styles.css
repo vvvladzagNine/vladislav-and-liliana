@@ -29,13 +29,14 @@ html, body {
 }
 
 body {
+    font-family: var(--primary-font);
+    color: var(--text-color);
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
-    font-family: var(--primary-font);
-    background-color: var(--background-color);
-    color: var(--text-color);
+    width: 100%;
     min-height: 100vh;
+    background-color: #5A5B70; /* Добавляем фоновый цвет, соответствующий guest-form */
+    overflow-x: hidden;
     position: relative;
     -webkit-overflow-scrolling: touch;
     display: block;
@@ -59,14 +60,17 @@ body {
 }
 
 .main-content {
-    position: relative;
-    overflow: visible;
     width: 100%;
-    max-width: 390px;
+    max-width: 430px;
     margin: 0 auto;
     padding: 0;
+    position: relative;
+    overflow-x: hidden;
+    background-color: #fff; /* Явно указываем белый фон для основного контента */
     z-index: 1;
     box-sizing: border-box;
+    padding-bottom: 0; /* Убираем отступ снизу */
+    margin-bottom: 0; /* Убираем отступ снизу */
 }
 
 .background-decorations-bottom,
@@ -92,7 +96,7 @@ body {
     position: absolute;
     width: calc(100% + 20px);
     height: auto;
-    top: 100px;
+    top: 230px;
     right: -10px;
     left: -10px;
     transform: none;
@@ -1053,7 +1057,7 @@ h2 {
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     margin-right: calc(-50vw + 50%);
-    padding: 48px 0;
+    padding: 48px 0 96px 0;
     background: #5A5B70;
     color: white;
     box-sizing: border-box;
@@ -1086,6 +1090,7 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 20px; /* Добавляем отступ снизу */
 }
 
 .form-group {
@@ -1117,7 +1122,7 @@ h2 {
 }
 
 .form-group-last {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     padding-bottom: 30px;
     /* border-bottom: 1px solid #757693; */
     width: 100%;
@@ -1229,7 +1234,7 @@ input[type="checkbox"]:checked::after {
 
 .submit-button {
     width: 100%;
-    margin: 0 auto;
+    margin: 0 auto 40px auto;
     display: block;
     padding: 15px;
     background: #000000;
@@ -1458,7 +1463,7 @@ input[type="checkbox"]:checked::after {
         width: 100vw;
         margin-left: calc(-50vw + 50%);
         margin-right: calc(-50vw + 50%);
-        padding: 48px 16px;
+        padding: 48px 16px 96px 16px;
         box-sizing: border-box;
     }
     
@@ -1477,10 +1482,15 @@ input[type="checkbox"]:checked::after {
         position: absolute;
         width: calc(100% + 20px);
         height: auto;
-        top: 100px;
+        top: 230px;
         right: -10px;
         left: -10px;
         transform: none;
         max-width: none;
     }
+}
+
+section:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
