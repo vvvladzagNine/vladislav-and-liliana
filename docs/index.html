@@ -195,7 +195,7 @@
             <div class="contacts-container">
                 <div class="contact-person">
                     <div class="contact-name">Галина</div>
-                    <div class="contact-phone">+7 (925) 003-45-39</div>
+                    <div class="contact-phone" onclick="copyToClipboard('+7 (925) 003-45-39')" data-phone="+7 (925) 003-45-39">+7 (925) 003-45-39</div>
                     <div class="contact-buttons">
                         <a href="https://t.me/lozya1" class="contact-button telegram-button">
                             <img src="images/ic_baseline-telegram.png" alt="Telegram" class="contact-icon">
@@ -210,7 +210,7 @@
                 
                 <div class="contact-person">
                     <div class="contact-name">Валентина</div>
-                    <div class="contact-phone">+7 (985) 955-85-93</div>
+                    <div class="contact-phone" onclick="copyToClipboard('+7 (985) 955-85-93')" data-phone="+7 (985) 955-85-93">+7 (985) 955-85-93</div>
                     <div class="contact-buttons">
                         <a href="https://t.me/Valya_Kremenitskaya" class="contact-button telegram-button">
                             <img src="images/ic_baseline-telegram.png" alt="Telegram" class="contact-icon">
@@ -327,6 +327,38 @@
                 });
             }
         });
+
+        // Функция для копирования номера телефона в буфер обмена
+        function copyToClipboard(text) {
+            // Создаем временный элемент input
+            const tempInput = document.createElement('input');
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            
+            // Выделяем текст
+            tempInput.select();
+            tempInput.setSelectionRange(0, 99999); // Для мобильных устройств
+            
+            // Копируем текст в буфер обмена
+            document.execCommand('copy');
+            
+            // Удаляем временный элемент
+            document.body.removeChild(tempInput);
+            
+            // Показываем уведомление о копировании
+            const phoneElements = document.querySelectorAll('.contact-phone');
+            phoneElements.forEach(element => {
+                if (element.dataset.phone === text) {
+                    // Добавляем класс для отображения уведомления
+                    element.classList.add('copied');
+                    
+                    // Удаляем класс через 2 секунды
+                    setTimeout(() => {
+                        element.classList.remove('copied');
+                    }, 2000);
+                }
+            });
+        }
     </script>
 </body>
 </html>
