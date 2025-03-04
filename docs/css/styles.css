@@ -898,6 +898,35 @@ h2 {
     text-align: center;
     color: #535A62;
     margin-bottom: 15px;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.contact-phone:hover {
+    color: #000000;
+}
+
+.contact-phone::after {
+    content: 'Нажмите, чтобы скопировать';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+}
+
+.contact-phone:hover::after {
+    opacity: 1;
+}
+
+.contact-phone.copied::after {
+    content: 'Скопировано!';
+    opacity: 1;
+    color: #4CAF50;
 }
 
 .contact-buttons {
