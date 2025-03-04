@@ -1173,7 +1173,7 @@ input[type="checkbox"]:checked::after {
 
 /* Добавляем стили для секции "Детали", которые были удалены */
 .details {
-    margin: 60px auto;
+    margin: 120px auto 60px;
     padding: 0 16px;
     position: relative;
     overflow: visible;
