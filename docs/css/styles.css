@@ -835,6 +835,116 @@ h2 {
     color: #535A62;
 }
 
+/* Стили для секции контактов */
+.contacts {
+    width: 100%;
+    max-width: 390px;
+    margin: 60px auto 0;
+    padding: 0 16px;
+    position: relative;
+    overflow: visible;
+}
+
+.contacts-title {
+    font-family: 'Lighthaus';
+    font-weight: 400;
+    font-size: 31px;
+    line-height: 31px;
+    letter-spacing: 0px;
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.contacts-description {
+    font-family: var(--andika-font);
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 24.7px;
+    letter-spacing: 0px;
+    text-align: center;
+    color: #535A62;
+    margin-bottom: 40px;
+}
+
+.contacts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.contact-person {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-name {
+    font-family: var(--lighthaus-font);
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 31px;
+    text-align: center;
+}
+
+.contact-phone {
+    font-family: var(--andika-font);
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 24.7px;
+    text-align: center;
+    color: #535A62;
+    margin-bottom: 15px;
+}
+
+.contact-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.contact-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 15px;
+    background: #00040D;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: var(--andika-font);
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.contact-button:hover {
+    background-color: #333333;
+}
+
+.contact-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.telegram-button {
+    background-color: #00040D;
+}
+
+.telegram-button:hover {
+    background-color: #333333;
+}
+
+.whatsapp-button {
+    background-color: #00040D;
+}
+
+.whatsapp-button:hover {
+    background-color: #333333;
+}
+
 .rsvp {
     padding: 80px 20px;
     background-color: #fff;
@@ -1054,6 +1164,7 @@ input[type="checkbox"]:checked::after {
 .location,
 .schedule,
 .dress-code,
+.contacts,
 .details,
 .warning-container {
     position: relative;
