@@ -83,11 +83,11 @@ body {
 
 .bg-image-1 {
     position: absolute;
-    width: 223px;
-    height: 279px;
-    top: -90px;
+    width: 120px;
+    height: 152px;
+    top: -65px;
     left: 0;
-    margin-left: -160px;
+    margin-left: 0px;
     /* transform: translateX(-79px); */
     z-index: -1;
 }
@@ -96,7 +96,7 @@ body {
     position: absolute;
     width: calc(100% + 20px);
     height: auto;
-    top: 210px;
+    top: -100px;
     right: -10px;
     left: -10px;
     transform: none;
@@ -123,7 +123,7 @@ body {
     position: absolute;
     width: 100%; /* Устанавливаем ширину равной ширине секции */
     height: auto;
-    top: 70px;
+    top: 60px;
     left: 0;
     transform: none; /* Убираем трансформацию */
     z-index: 1;
@@ -149,10 +149,10 @@ body {
 
 .bg-image-6 {
     position: absolute;
-    width: 546px;
-    height: 465px;
-    top: -350px; /* Поднимаем выше, чтобы захватить и примеры образов */
-    left: 50%;
+    width: 715px;
+    height: 617px;
+    top: -530px; /* Поднимаем выше, чтобы захватить и примеры образов */
+    left: 67%;
     transform: translateX(-50%);
     z-index: -2;
 }
@@ -1331,11 +1331,11 @@ input[type="checkbox"]:checked::after {
 
 .bg-image-8 {
     position: absolute;
-    width: 704px;
-    height: 288px;
+    width: 563px;
+    height: 230px;
     top: 50%;
     right: 0;
-    transform: translate(50%, -10%);
+    transform: translate(45%, 10%);
     z-index: 2;
 }
 
@@ -1488,7 +1488,7 @@ input[type="checkbox"]:checked::after {
         position: absolute;
         width: calc(100% + 20px);
         height: auto;
-        top: 210px;
+        top: 110px;
         right: -10px;
         left: -10px;
         transform: none;
