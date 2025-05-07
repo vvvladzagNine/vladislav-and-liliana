@@ -108,31 +108,28 @@ body {
 
 .bg-image-3 {
     position: absolute;
-    width: calc(100vw + 40px); /* Увеличиваем ширину на 40px (по 20px с каждой стороны) */
+    width: 100%; /* Устанавливаем ширину равной ширине календаря */
     height: auto;
-    top: auto; /* Убираем фиксированное положение сверху */
-    bottom: -100px; /* Опускаем изображение на 10px ниже (было -90px) */
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: -140px; /* Размещаем изображение чуть ниже календаря */
+    left: 0;
+    transform: none; /* Убираем трансформацию */
     z-index: 2;
-    max-width: none;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
-    object-fit: cover;
+    max-width: 100%;
+    margin: 0; /* Убираем отступы */
+    object-fit: contain; /* Сохраняем пропорции изображения */
 }
 
 .bg-image-4 {
     position: absolute;
-    width: calc(100vw + 20px);
+    width: 100%; /* Устанавливаем ширину равной ширине секции */
     height: auto;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -180px);
+    top: 70px; /* Опускаем изображение ниже */
+    left: 0;
+    transform: none; /* Убираем трансформацию */
     z-index: 1;
-    max-width: none;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
-    object-fit: cover;
+    max-width: 100%;
+    margin: 0; /* Убираем отступы */
+    object-fit: contain; /* Сохраняем пропорции изображения */
 }
 
 .bg-image-5 {
@@ -806,7 +803,7 @@ h2 {
 }
 
 .color-circles-container:not(.forbidden) .color-circle:nth-child(2) {
-    background-color: #32405D;
+    background-color: #71767C;
 }
 
 .color-circles-container:not(.forbidden) .color-circle:nth-child(3) {
@@ -814,7 +811,7 @@ h2 {
 }
 
 .color-circles-container:not(.forbidden) .color-circle:nth-child(4) {
-    background-color: #CDC5B7;
+    background-color: #AFB9C5;
 }
 
 /* Запрещенные цвета */
