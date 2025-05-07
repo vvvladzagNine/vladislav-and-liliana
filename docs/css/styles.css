@@ -123,7 +123,7 @@ body {
     position: absolute;
     width: 100%; /* Устанавливаем ширину равной ширине секции */
     height: auto;
-    top: 70px; /* Опускаем изображение ниже */
+    top: 70px;
     left: 0;
     transform: none; /* Убираем трансформацию */
     z-index: 1;
@@ -1496,18 +1496,29 @@ input[type="checkbox"]:checked::after {
     }
     
     .bg-image-4 {
-        transform: translate(-50%, -120px); /* Уменьшаем отступ сверху для мобильных устройств */
-        width: calc(100vw + 20px); /* Увеличиваем ширину на 20px (по 10px с каждой стороны) */
+        position: absolute;
+        width: 100%;
         height: auto;
-        object-fit: cover; /* Обеспечиваем правильное масштабирование */
+        top: 70px;
+        left: 0;
+        transform: none;
+        z-index: 1;
+        max-width: 100%;
+        margin: 0;
+        object-fit: contain;
     }
     
     .bg-image-3 {
-        top: auto;
-        bottom: -50px; /* Опускаем изображение на 10px ниже (было -40px) */
-        width: calc(100vw + 40px); /* Увеличиваем ширину на 40px (по 20px с каждой стороны) */
+        position: absolute;
+        width: 100%;
         height: auto;
-        object-fit: cover;
+        bottom: -140px;
+        left: 0;
+        transform: none;
+        z-index: 2;
+        max-width: 100%;
+        margin: 0;
+        object-fit: contain;
     }
 }
 
