@@ -1,8 +1,27 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Функция для получения параметров из URL
     function getUrlParameter(name) {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get(name);
+        // Получаем полный URL
+        const fullUrl = window.location.href;
+        
+        try {
+            // Пробуем получить параметры двумя способами
+            // 1. Стандартный способ
+            const standardUrl = new URL(fullUrl);
+            const standardParam = standardUrl.searchParams.get(name);
+            if (standardParam) return standardParam;
+
+            // 2. Для случая с конечным слешем
+            if (fullUrl.endsWith('/')) {
+                // Создаем URL без конечного слеша
+                const urlWithoutSlash = fullUrl.slice(0, -1);
+                const url = new URL(urlWithoutSlash);
+                return url.searchParams.get(name);
+            }
+        } catch (e) {
+            console.log('Error parsing URL:', e);
+        }
+        return null;
     }
 
     // Функция для обновления имен гостей
