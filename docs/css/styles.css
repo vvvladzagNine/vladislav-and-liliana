@@ -129,13 +129,17 @@ body {
 
 .bg-image-4 {
     position: absolute;
-    width: 1440.08px;
-    height: 600.296px;
-    top: 0;
+    width: 100%;
+    height: auto;
+    top: 110px;
     left: 0;
-    transform: translate(-520px, 90px);
-    z-index: 1;
+    transform: none;
+    z-index: -1;
+    max-width: 100%;
+    margin: 0;
+    object-fit: contain;
 }
+
 
 .forbidden-colors-container {
     position: relative;
