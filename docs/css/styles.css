@@ -120,23 +120,12 @@ body {
     object-fit: contain; /* Сохраняем пропорции изображения */
 }
 
-.bg-image-4 {
-    position: absolute;
-    width: 100%; /* Устанавливаем ширину равной ширине секции */
-    height: auto;
-    top: 60px;
-    left: 0;
-    transform: none; /* Убираем трансформацию */
-    z-index: 1;
-    max-width: 100%;
-    margin: 0; /* Убираем отступы */
-    object-fit: contain; /* Сохраняем пропорции изображения */
-}
+
 
 .bg-image-5 {
     position: absolute;
-    width: 883.4px;
-    height: 361.08px;
+    width: 1060.08px;
+    height: 433.296px;
     top: 0;
     left: 0;
     transform: translate(-250px, -250px);
@@ -150,10 +139,10 @@ body {
 
 .bg-image-6 {
     position: absolute;
-    width: 715px;
-    height: 617px;
-    top: -530px; /* Поднимаем выше, чтобы захватить и примеры образов */
-    left: 67%;
+    width: 858px; /* 715px * 1.2 */
+    height: 740.4px; /* 617px * 1.2 */
+    top: -400px; /* Поднимаем выше, чтобы захватить и примеры образов */
+    left: 20%;
     transform: translateX(-50%);
     z-index: -2;
 }
@@ -524,8 +513,8 @@ body {
 }
 
 .schedule-content {
-    background: rgba(255, 255, 255, 0.66);
-    backdrop-filter: blur(8.9px);
+    /* background: rgba(255, 255, 255, 0.66); */
+    /* backdrop-filter: blur(8.9px); */
     padding: 40px 30px;
     border-radius: 8px;
 }
@@ -1103,7 +1092,7 @@ h2 {
 .form-group {
     margin-bottom: 30px;
     padding-bottom: 30px;
-    border-bottom: 1px solid #757693;
+    border-bottom: 1px solid #8C939D;
     width: 100%;
     box-sizing: border-box;
 }
@@ -1143,6 +1132,13 @@ h2 {
     color: #FFFFFF;
 }
 
+.form-group-last .label-headline {
+    display: block;
+    margin-bottom: 20px;
+    font-family: var(--andika-font);
+    color: #FFFFFF;
+}
+
 /* Стили для поля ввода */
 input[type="text"] {
     width: 100%;
@@ -1159,7 +1155,7 @@ input[type="text"] {
 
 input[type="text"]:focus {
     outline: none;
-    border-color: #464646;
+    border-color: #3C424A;
     background-color: #ffffff;
     box-shadow: 0 0 0 2px rgba(150, 140, 182, 0.3);
 }
@@ -1169,7 +1165,7 @@ input[type="text"]::placeholder {
     font-weight: 400;
     font-size: 16px;
     line-height: 25.78px;
-    color: #58597C;
+    color: #3C424A;
 }
 
 /* Стили для радиокнопок */
@@ -1336,7 +1332,7 @@ input[type="checkbox"]:checked::after {
     height: 230px;
     top: 50%;
     right: 0;
-    transform: translate(45%, 10%);
+    transform: translate(42%, 10%);
     z-index: 2;
 }
 
@@ -1500,10 +1496,10 @@ input[type="checkbox"]:checked::after {
         position: absolute;
         width: 100%;
         height: auto;
-        top: 70px;
+        top: 110px;
         left: 0;
         transform: none;
-        z-index: 1;
+        z-index: -1;
         max-width: 100%;
         margin: 0;
         object-fit: contain;
