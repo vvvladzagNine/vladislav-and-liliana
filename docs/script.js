@@ -1,4 +1,56 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // Функция для получения параметров из URL
+    function getUrlParameter(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+    }
+
+    // Функция для обновления имен гостей
+    function updateGuestNames() {
+        const guestNamesElement = document.getElementById('guestNames');
+        if (!guestNamesElement) {
+            console.log('Element guestNames not found');
+            return;
+        }
+
+        const guests = getUrlParameter('guests');
+        const gender = getUrlParameter('gender'); // m - мужской, f - женский
+        console.log('URL guests parameter:', guests);
+        console.log('URL gender parameter:', gender);
+        
+        if (!guests) {
+            console.log('No guests parameter, setting default');
+            guestNamesElement.innerHTML = 'Гость';
+            guestNamesElement.closest('.invitation-title').querySelector('.dear').textContent = 'Дорогой';
+            return;
+        }
+
+        // Разделяем имена гостей, если их несколько
+        const guestNames = decodeURIComponent(guests).split(',');
+        console.log('Decoded guest names:', guestNames);
+        
+        if (guestNames.length === 1) {
+            // Если один гость
+            console.log('Single guest:', guestNames[0]);
+            guestNamesElement.innerHTML = guestNames[0];
+            // Определяем обращение по полу
+            if (gender === 'f') {
+                guestNamesElement.closest('.invitation-title').querySelector('.dear').textContent = 'Дорогая';
+            } else {
+                guestNamesElement.closest('.invitation-title').querySelector('.dear').textContent = 'Дорогой';
+            }
+        } else if (guestNames.length === 2) {
+            // Если два гостя
+            console.log('Two guests:', guestNames[0], guestNames[1]);
+            guestNamesElement.innerHTML = `${guestNames[0]}<br>и ${guestNames[1]}`;
+            guestNamesElement.closest('.invitation-title').querySelector('.dear').textContent = 'Дорогие';
+        }
+    }
+
+    // Вызываем функцию при загрузке страницы
+    console.log('DOMContentLoaded event fired');
+    updateGuestNames();
+
     // Модальное окно сообщений
     const modal = document.getElementById("messageModal");
     const messagesBtn = document.getElementById("messagesBtn");
@@ -552,40 +604,4 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // Запускаем обратный отсчет
     setupCountdown();
-
-    // Функция для получения параметров из URL
-    function getUrlParameter(name) {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get(name);
-    }
-
-    // Функция для обновления имен гостей
-    function updateGuestNames() {
-        const guestNamesElement = document.getElementById('guestNames');
-        if (!guestNamesElement) return;
-
-        const guests = getUrlParameter('guests');
-        
-        if (!guests) {
-            guestNamesElement.innerHTML = 'Уважаемый гость';
-            guestNamesElement.closest('.invitation-title').querySelector('.dear').textContent = 'Дорогой';
-            return;
-        }
-
-        // Разделяем имена гостей, если их несколько
-        const guestNames = decodeURIComponent(guests).split(',');
-        
-        if (guestNames.length === 1) {
-            // Если один гость
-            guestNamesElement.innerHTML = guestNames[0];
-            guestNamesElement.closest('.invitation-title').querySelector('.dear').textContent = 'Дорогой';
-        } else if (guestNames.length === 2) {
-            // Если два гостя
-            guestNamesElement.innerHTML = `${guestNames[0]}<br>и ${guestNames[1]}`;
-            guestNamesElement.closest('.invitation-title').querySelector('.dear').textContent = 'Дорогие';
-        }
-    }
-
-    // Вызываем функцию при загрузке страницы
-    updateGuestNames();
 });
