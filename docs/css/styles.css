@@ -20,27 +20,34 @@
 }
 
 html, body {
-    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
     overflow-x: hidden;
     position: relative;
-    height: 100%;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
 }
 
 body {
     font-family: var(--primary-font);
     color: var(--text-color);
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    min-height: 100vh;
     background-color: #71767C;
-    ; /* Добавляем фоновый цвет, соответствующий guest-form */
-    overflow-x: hidden;
-    position: relative;
     -webkit-overflow-scrolling: touch;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-content {
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    background-color: #fff;
+    z-index: 1;
+    box-sizing: border-box;
+    overflow: visible;
 }
 
 /* Декоративные элементы фона */
@@ -58,20 +65,6 @@ body {
 .bg-image {
     position: absolute;
     object-fit: contain;
-}
-
-.main-content {
-    width: 100%;
-    max-width: 430px;
-    margin: 0 auto;
-    padding: 0;
-    position: relative;
-    overflow-x: hidden;
-    background-color: #fff; /* Явно указываем белый фон для основного контента */
-    z-index: 1;
-    box-sizing: border-box;
-    padding-bottom: 0; /* Убираем отступ снизу */
-    margin-bottom: 0; /* Убираем отступ снизу */
 }
 
 .background-decorations-bottom,
@@ -119,8 +112,6 @@ body {
     margin: 0; /* Убираем отступы */
     object-fit: contain; /* Сохраняем пропорции изображения */
 }
-
-
 
 .bg-image-5 {
     position: absolute;
@@ -1102,7 +1093,6 @@ h2 {
     padding-bottom: 0;
 }
 
-
 .form-group-label {
     display: block;
     margin-bottom: 8px;
@@ -1380,14 +1370,16 @@ input[type="checkbox"]:checked::after {
     
     body {
         height: auto;
-        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     
     .main-content {
         width: 100%;
         max-width: 100%;
         padding: 0;
-        overflow-x: hidden;
+        overflow: visible;
     }
     
     .header-container {
