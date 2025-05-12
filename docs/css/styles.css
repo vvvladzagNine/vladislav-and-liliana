@@ -94,7 +94,7 @@ body {
     position: absolute;
     width: calc(100% + 20px);
     height: auto;
-    top: -100px;
+    top: 90px;
     right: -10px;
     left: -10px;
     transform: none;
@@ -124,6 +124,16 @@ body {
     top: 0;
     left: 0;
     transform: translate(-250px, -250px);
+    z-index: 1;
+}
+
+.bg-image-4 {
+    position: absolute;
+    width: 1440.08px;
+    height: 600.296px;
+    top: 0;
+    left: 0;
+    transform: translate(-520px, 90px);
     z-index: 1;
 }
 
