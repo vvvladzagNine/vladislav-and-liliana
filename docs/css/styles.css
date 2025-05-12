@@ -32,6 +32,8 @@ body {
     color: var(--text-color);
     background-color: #71767C;
     -webkit-overflow-scrolling: touch;
+    display: flex;
+    justify-content: center;
 }
 
 .wrapper {
@@ -47,10 +49,11 @@ body {
 
 .main-content {
     width: 100%;
-    position: relative;
+    max-width: 430px;
     background-color: #fff;
+    position: relative;
     z-index: 1;
-    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 /* Декоративные элементы фона */
@@ -142,16 +145,13 @@ body {
 }
 
 /* Шапка */
-.header-container {
+.header-section {
     width: 100%;
     position: relative;
-    /* margin-bottom: 30px; */
-    display: block;
     text-align: center;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    max-width: 100%;
 }
 
 .header-image {
