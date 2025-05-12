@@ -19,32 +19,30 @@
     box-sizing: border-box;
 }
 
-html, body {
+html {
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
-    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 body {
     font-family: var(--primary-font);
     color: var(--text-color);
     background-color: #71767C;
-    -webkit-overflow-scrolling: touch;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
     display: flex;
     justify-content: center;
+    overflow: hidden;
 }
 
 .wrapper {
-    width: 100%;
-    max-width: 430px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #fff;
-    overflow-x: hidden;
+    display: none; /* Отключаем этот элемент, если он не используется */
 }
 
 .main-content {
@@ -53,7 +51,7 @@ body {
     background-color: #fff;
     position: relative;
     z-index: 1;
-    overflow-x: hidden;
+    overflow-y: visible;
 }
 
 /* Декоративные элементы фона */
@@ -624,10 +622,9 @@ h2 {
 }
 
 .location {
-    width: 120%;
-    max-width: 680px;
-    height: 634px;
-    margin: 120px -25px 0;
+    width: 100%;
+    max-width: 100%;
+    margin: 120px 0 0;
     padding: 10px 16px;
     background-image: url('../images/location_main.png');
     background-size: cover;
@@ -1044,9 +1041,7 @@ h2 {
 
 .guest-form {
     position: relative;
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
+    width: 100%;
     padding: 48px 0 96px 0;
     background: #71767C;
     color: white;
@@ -1339,176 +1334,25 @@ input[type="checkbox"]:checked::after {
     section {
         margin-bottom: 60px;
     }
-
-    .location {
-        width: 100%;
-        margin: 120px 0 0;
-    }
-
-    .location-map-button {
-        width: 100%;
-        max-width: 240px;
-    }
-    
-    .calendar {
-        width: 100%;
-        max-width: 100%;
-        padding: 0 16px;
-    }
-    
-    .calendar-block {
-        width: 100%;
-        max-width: 500px;
-    }
 }
 
 /* Добавляем медиа-запрос для мобильных устройств */
 @media screen and (max-width: 430px) {
-    .wrapper {
-        width: 100%;
-        max-width: 100%;
+    html {
+        overflow-x: hidden;
+        overflow-y: auto;
     }
     
     body {
         height: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        min-height: 100%;
+        overflow: hidden;
     }
     
     .main-content {
         width: 100%;
         max-width: 100%;
         padding: 0;
-        overflow: visible;
-    }
-    
-    .header-container {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        box-sizing: border-box;
-    }
-    
-    section {
-        margin-bottom: 60px;
-        box-sizing: border-box;
-    }
-    
-    .invitation-text, .schedule, .dress-code, .contacts, .details {
-        max-width: 100%;
-        padding: 0 16px;
-        margin-left: auto;
-        margin-right: auto;
-        box-sizing: border-box;
-    }
-    
-    .location {
-        width: 100%;
-        margin: 60px 0 0;
-        height: auto;
-        min-height: 500px;
-        position: relative;
-        z-index: 1;
-        padding: 0;
-    }
-    
-    .location-content {
-        width: 90%;
-        max-width: 303px;
-        height: auto;
-        min-height: 268px;
-        position: relative;
-        z-index: 5;
-        margin: 0 auto;
-    }
-    
-    .calendar {
-        width: 100%;
-        max-width: 100%;
-        margin: 96px auto;
-        padding: 0 16px;
-        box-sizing: border-box;
-    }
-    
-    .calendar-block {
-        width: 100%;
-        max-width: 100%;
-        padding: 32px 8px;
-        min-height: auto;
-        margin: 0 auto;
-    }
-    
-    .location-map-button {
-        width: 100%;
-        max-width: 271px;
-        position: relative;
-        z-index: 10;
-        pointer-events: auto;
-        margin: 0 auto;
-    }
-    
-    .form-container {
-        width: 100%;
-        max-width: 300px;
-        margin: 0 auto;
-        box-sizing: border-box;
-    }
-    
-    .guest-form {
-        width: 100vw;
-        margin-left: calc(-50vw + 50%);
-        margin-right: calc(-50vw + 50%);
-        padding: 48px 16px 96px 16px;
-        box-sizing: border-box;
-    }
-    
-    .details-content {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        min-height: 267px;
-        padding: 32px 16px;
-        box-sizing: border-box;
-        position: relative;
-        z-index: 1;
-    }
-    
-    .bg-image-2 {
-        position: absolute;
-        width: calc(100% + 20px);
-        height: auto;
-        top: 110px;
-        right: -10px;
-        left: -10px;
-        transform: none;
-        max-width: none;
-    }
-    
-    .bg-image-4 {
-        position: absolute;
-        width: 100%;
-        height: auto;
-        top: 110px;
-        left: 0;
-        transform: none;
-        z-index: -1;
-        max-width: 100%;
-        margin: 0;
-        object-fit: contain;
-    }
-    
-    .bg-image-3 {
-        position: absolute;
-        width: 100%;
-        height: auto;
-        bottom: -140px;
-        left: 0;
-        transform: none;
-        z-index: 2;
-        max-width: 100%;
-        margin: 0;
-        object-fit: contain;
     }
 }
 
