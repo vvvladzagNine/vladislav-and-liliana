@@ -291,7 +291,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (allergies.length > 0) {
                 allergiesText = allergies.map(allergy => {
                     switch(allergy) {
-                        case 'no': return 'нет';
+                        case 'no': return 'нет аллергии';
                         case 'nuts': return 'орехи';
                         case 'citrus': return 'цитрусы';
                         case 'lactose': return 'лактоза';
