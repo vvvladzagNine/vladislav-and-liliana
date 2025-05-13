@@ -240,8 +240,12 @@
                 <h2 class="details-title">Детали</h2>
                 <p class="details-description">
                     Дорогие гости, мы не хотим обременять вас выбором подарка, поэтому будем рады вкладу
-                    в бюджет молодой семьи
+                    в бюджет молодой семьи.
                 </p>
+                <p class="details-description">
+                    Если вы хотели подарить цветы, вместо букета можете внести сумму на наш цветочный депозит — и тогда свежие букеты будут радовать нас ещё несколько недель после свадьбы!
+                </p>
+                <a href="https://musypusy.store/weddingfund/11/08/2025" target="_blank" class="flowers-button">Узнать про цветы</a>
             </div>
             <img src="images/bg_images/bg_image7.png" alt="" class="bg-image bg-image-7">
             <img src="images/bg_images/bg_image8.png" alt="" class="bg-image bg-image-8">
@@ -334,6 +338,17 @@
                     const mapUrl = this.getAttribute('href');
                     // Открываем карту в новом окне
                     window.open(mapUrl, '_blank');
+                });
+            }
+
+            // Обработчик для кнопки "Узнать про цветы"
+            const flowersButton = document.querySelector('.flowers-button');
+            if (flowersButton) {
+                flowersButton.addEventListener('click', function(e) {
+                    e.preventDefault(); // Предотвращаем стандартное поведение ссылки
+                    const flowerUrl = this.getAttribute('href');
+                    // Открываем страницу в новом окне
+                    window.open(flowerUrl, '_blank');
                 });
             }
             

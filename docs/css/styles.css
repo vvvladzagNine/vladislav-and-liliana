@@ -1294,7 +1294,8 @@ input[type="checkbox"]:checked::after {
     margin: 0 auto;
     box-sizing: border-box;
     position: relative;
-    z-index: 1;
+    z-index: 10;
+    align-items: center;
 }
 
 .details-title {
@@ -1318,13 +1319,42 @@ input[type="checkbox"]:checked::after {
     margin-top: -10px;
 }
 
+.flowers-button {
+    width: 271px;
+    height: 44px;
+    padding: 12px 16px;
+    background: #000000;
+    color: #FFFFFF;
+    border: none;
+    font-family: var(--andika-font);
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+    position: relative;
+    z-index: 100;
+    pointer-events: auto;
+    margin: 20px auto 0;
+    text-align: center;
+    line-height: 1;
+}
+
+.flowers-button:hover {
+    background-color: #333333;
+}
+
 .bg-image-7 {
     position: absolute;
     width: 441.7px;
     height: 180.54px;
     top: 50%;
     left: 0;
-    transform: translate(-40%, -120%);
+    transform: translate(-43%, -120%);
     z-index: 0;
 }
 
@@ -1334,8 +1364,8 @@ input[type="checkbox"]:checked::after {
     height: 230px;
     top: 50%;
     right: 0;
-    transform: translate(42%, 10%);
-    z-index: 2;
+    transform: translate(47%, -30%);
+    z-index: 10;
 }
 
 /* Обновляем стили для мобильных устройств */
