@@ -291,6 +291,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (allergies.length > 0) {
                 allergiesText = allergies.map(allergy => {
                     switch(allergy) {
+                        case 'no': return 'нет';
                         case 'nuts': return 'орехи';
                         case 'citrus': return 'цитрусы';
                         case 'lactose': return 'лактоза';
@@ -306,6 +307,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (foodPreferences.length > 0) {
                 foodText = foodPreferences.map(pref => {
                     switch(pref) {
+                        case 'no': return 'без разницы';
                         case 'no_meat': return 'не ем мясо';
                         case 'no_fish': return 'не ем рыбу';
                         case 'no_seafood': return 'не ем морепродукты';

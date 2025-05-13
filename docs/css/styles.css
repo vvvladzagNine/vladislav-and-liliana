@@ -129,13 +129,13 @@ body {
 
 .bg-image-4 {
     position: absolute;
-    width: 128%; /* Увеличено в 1.28 раза */
+    width: 136%; /* Увеличено в 1.28 раза */
     height: auto;
-    top: 195px;
-    left: -14%; /* Центрирование увеличенного изображения */
+    top: 120px;
+    left: -18%; /* Центрирование увеличенного изображения */
     transform: none;
     z-index: -1;
-    max-width: 128%; /* Увеличено в 1.28 раза */
+    /*max-width: 128%;  Увеличено в 1.28 раза */
     margin: 0;
     object-fit: contain;
 }
